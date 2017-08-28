@@ -32,9 +32,8 @@ export const firebaseConfig = {
     AppComponent,
     WelcomeComponent,
     TriviaFormComponent,
-    TriviaListComponent
+    TriviaListComponent,
     LiteratureComponent
-
   ],
   imports: [
     BrowserModule,
