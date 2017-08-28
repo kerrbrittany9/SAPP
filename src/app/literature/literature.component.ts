@@ -10,7 +10,7 @@ import { LiteratureService } from '../literature.service';
 })
 export class LiteratureComponent implements OnInit {
   books: any[] = null;
-
+  searchDone: boolean = false;
   constructor(private literatureService: LiteratureService) { }
 
   ngOnInit() {
@@ -21,5 +21,6 @@ export class LiteratureComponent implements OnInit {
     this.literatureService.getLiteratureData(callString).subscribe(response => {
       this.books = response.json().items;
     });
+    this.searchDone = true;
   }
 }

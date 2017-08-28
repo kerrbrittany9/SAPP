@@ -1,4 +1,5 @@
 <div class="container-fluid">
+
   <div class="well">
     <h2>Literature</h2>
     <div class="form-group">
@@ -8,17 +9,20 @@
     <button (click)="beginLiteratureSearch(newLitSearch.value)">Search The Literary World</button>
   </div>
 
-  <h2>List of Relevant Books</h2>
-  <div *ngFor="let book of books; let i=index">
-    <div class="well" *ngIf='i<5'>
-      <h4>{{book.volumeInfo.title}}</h4> by
+  <div *ngIf="searchDone === true">
+    <h2>List of Relevant Books</h2>
+    <div *ngFor="let book of books; let i=index">
+      <div class="well" *ngIf='i<5'>
+        <h4>{{book.volumeInfo.title}}</h4> by
         <span *ngFor="let author of book.volumeInfo.authors; let isLast=last">{{author}}{{isLast ? '' : ', '}}</span>
-      <ul class="list-unstyled">
-        <br>
-        <li><img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="Image of Book Cover" /></li>
-        <br>
-        <li>{{book.volumeInfo.description}}</li>
-      </ul>
+        <ul class="list-unstyled">
+          <br>
+          <li><img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="Image of Book Cover" /></li>
+          <br>
+          <li>{{book.volumeInfo.description}}</li>
+        </ul>
+      </div>
     </div>
   </div>
+
 </div>
