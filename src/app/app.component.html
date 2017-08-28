@@ -1,5 +1,16 @@
-<a routerLink="trivia">Trivia</a>
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<nav class="navbar navbar-default" id="body">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="">Home</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="trivia">Trivia</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+  <router-outlet></router-outlet>
+</div>
