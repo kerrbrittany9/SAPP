@@ -19,12 +19,19 @@ export class LiteratureComponent implements OnInit {
   beginLiteratureSearch(keyword: string) {
     var callString = "https://www.googleapis.com/books/v1/volumes?q=" + keyword;
     this.literatureService.getLiteratureData(callString).subscribe(response => {
-
       this.books = response.json().items;
-      // var title = response.json().items[0].volumeInfo.title;
-      // var authors = response.json().items[0].volumeInfo.authors;
-      // var description = response.json().items[0].volumeInfo.description;
     });
   }
 
+  listAllButLast(array: any[]) {
+    var newArr = [];
+    for (var i = 0; i < array.length; i++) {
+      if (i + 1 < array.length) {
+        newArr.push(array[i] + ", ");
+      } else {
+        newArr.push(array[i]);
+      }
+    }
+    return newArr;
+  }
 }

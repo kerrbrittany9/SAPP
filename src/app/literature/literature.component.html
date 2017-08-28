@@ -11,9 +11,12 @@
   <h2>List of Relevant Books</h2>
   <div *ngFor="let book of books">
     <div class="well">
-      <h4>{{book.volumeInfo.title}} by {{book.volumeInfo.authors}}</h4>
+      <h4>{{book.volumeInfo.title}}</h4> by
+        <span *ngFor="let author of book.volumeInfo.authors; let isLast=last">{{author}}{{isLast ? '' : ', '}}</span>
       <ul class="list-unstyled">
+        <br>
         <li><img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="Image of Book Cover" /></li>
+        <br>
         <li>{{book.volumeInfo.description}}</li>
       </ul>
     </div>
