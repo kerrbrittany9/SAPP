@@ -22,16 +22,4 @@ export class LiteratureComponent implements OnInit {
       this.books = response.json().items;
     });
   }
-
-  listAllButLast(array: any[]) {
-    var newArr = [];
-    for (var i = 0; i < array.length; i++) {
-      if (i + 1 < array.length) {
-        newArr.push(array[i] + ", ");
-      } else {
-        newArr.push(array[i]);
-      }
-    }
-    return newArr;
-  }
 }
