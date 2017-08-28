@@ -9,6 +9,7 @@ import { LiteratureService } from '../literature.service';
   providers: [LiteratureService]
 })
 export class LiteratureComponent implements OnInit {
+  books: any[] = null;
 
   constructor(private literatureService: LiteratureService) { }
 
@@ -17,7 +18,9 @@ export class LiteratureComponent implements OnInit {
 
   beginLiteratureSearch(keyword: string) {
     var callString = "https://www.googleapis.com/books/v1/volumes?q=" + keyword;
-    this.literatureService.getLiteratureData(callString);
+    this.literatureService.getLiteratureData(callString).subscribe(response => {
+      console.log(response.json());
+    });
   }
 
 }
