@@ -19,7 +19,11 @@ export class LiteratureComponent implements OnInit {
   beginLiteratureSearch(keyword: string) {
     var callString = "https://www.googleapis.com/books/v1/volumes?q=" + keyword;
     this.literatureService.getLiteratureData(callString).subscribe(response => {
-      console.log(response.json());
+
+      this.books = response.json().items;
+      // var title = response.json().items[0].volumeInfo.title;
+      // var authors = response.json().items[0].volumeInfo.authors;
+      // var description = response.json().items[0].volumeInfo.description;
     });
   }
 
