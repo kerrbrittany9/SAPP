@@ -12,6 +12,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
+<<<<<<< HEAD
+import { TriviaFormComponent } from './trivia-form/trivia-form.component';
+import { TriviaListComponent } from './trivia-list/trivia-list.component';
+=======
 import { LiteratureComponent } from './literature/literature.component';
 
 export const googleBooksConfig = {
@@ -24,12 +28,18 @@ export const firebaseConfig = {
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket
 };
+>>>>>>> f72dd9984254cd422b7b8e9348a20c7273041996
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
+<<<<<<< HEAD
+    TriviaFormComponent,
+    TriviaListComponent
+=======
     LiteratureComponent
+>>>>>>> f72dd9984254cd422b7b8e9348a20c7273041996
   ],
   imports: [
     BrowserModule,
