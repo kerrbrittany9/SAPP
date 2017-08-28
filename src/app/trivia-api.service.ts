@@ -7,7 +7,7 @@ export class TriviaApiService {
 
   constructor(private http: Http) { }
 
-  getTriviaResults(amount: number) {
-    return this.http.get("https://opentdb.com/api.php?amount=" + amount)
+  getTriviaResults(category: number) {
+    return this.http.get("https://opentdb.com/api.php?amount=1&category=" + category)
   }
 }

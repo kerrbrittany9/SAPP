@@ -13,9 +13,9 @@ export class TriviaFormComponent implements OnInit {
 
   constructor(private triviaAnswers: TriviaApiService) { }
 
-  getTrivia(amount: number) {
-    console.log(amount);
-    this.triviaAnswers.getTriviaResults(amount).subscribe(response => {
+  getTrivia(category: number) {
+    console.log(category);
+    this.triviaAnswers.getTriviaResults(category).subscribe(response => {
       this.trivia = response.json();
         // console.log(response.json);
               console.log(this.trivia);

@@ -1,5 +1,11 @@
 <h2>Here are your results</h2>
 <div *ngFor="let trivia of childTrivia.results;">
-  <h3>{{trivia.question}}</h3>
-  <h1>{{trivia.correct_answer}}!!!!!</h1>
+  <h3><em>{{trivia.question}}</em></h3>
+  <ul *ngFor="let incorrect of trivia.incorrect_answers">
+    <li>{{incorrect}}?</li>
+  </ul>
+  <ul>
+    <li>No, the correct answer is...</li>
+  </ul>
+  <h2>{{trivia.correct_answer}}!!!!!</h2>
 </div>
