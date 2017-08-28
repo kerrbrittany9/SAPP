@@ -1,0 +1,13 @@
+<h3>How many conversation starters do you want?</h3>
+
+<form>
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input type=number #triviaAmount>
+  </div>
+  <button (click)="getTrivia(triviaAmount.value)">Get conversations</button>
+</form>
+
+<div *ngIf="trivia">
+  <app-trivia-list [childTrivia]="trivia"></app-trivia-list>
+</div>

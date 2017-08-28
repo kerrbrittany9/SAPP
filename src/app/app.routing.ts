@@ -1,7 +1,7 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ArtsComponent } from './arts/arts.component';
+import { TriviaFormComponent } from './trivia-form/trivia-form.component';
 
 const appRoutes: Routes = [
   {
@@ -9,8 +9,8 @@ const appRoutes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: 'arts',
-    component: ArtsComponent
+    path: 'trivia',
+    component: TriviaFormComponent
   }
 ];
 

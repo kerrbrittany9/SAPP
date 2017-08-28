@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ArtsComponent } from './arts.component';
+import { TriviaFormComponent } from './trivia-form.component';
 
-describe('ArtsComponent', () => {
-  let component: ArtsComponent;
-  let fixture: ComponentFixture<ArtsComponent>;
+describe('TriviaFormComponent', () => {
+  let component: TriviaFormComponent;
+  let fixture: ComponentFixture<TriviaFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArtsComponent ]
+      declarations: [ TriviaFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ArtsComponent);
+    fixture = TestBed.createComponent(TriviaFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

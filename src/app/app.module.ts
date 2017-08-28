@@ -5,13 +5,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
-import { ArtsComponent } from './arts/arts.component';
+import { TriviaFormComponent } from './trivia-form/trivia-form.component';
+import { TriviaListComponent } from './trivia-list/trivia-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    ArtsComponent
+    TriviaFormComponent,
+    TriviaListComponent
   ],
   imports: [
     BrowserModule,
