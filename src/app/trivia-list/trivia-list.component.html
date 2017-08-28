@@ -1,4 +1,4 @@
-<h2>Here are your results</h2>
+<h2>Step 1: Statement 'I was reading about {{childCategory}} and found this fun fact:''</h2>
 <div *ngFor="let trivia of childTrivia.results;">
   <h3><em>{{trivia.question}}</em></h3>
   <ul *ngFor="let incorrect of trivia.incorrect_answers">
@@ -8,4 +8,11 @@
     <li>No, the correct answer is...</li>
   </ul>
   <h2>{{trivia.correct_answer}}!!!!!</h2>
+
+  <h2>Step 2: Giggle a little</h2>
+  <h2>Step 3: State, "I know, right?" or "Can you believe that!?"</h2>
+  <h2>Step 4: Segue into a question about them....Do you keep up on any {{childCategory}}?</h2>
+  <h2>Step 5: Add something about yourself. Maybe your favorite {{childCategory}}.</h2>
+  <h2>Remember: Take turns talking. Listen and nod.</h2>
+  <button (click)="saveTrivia(trivia.question, trivia.incorrect_answers, trivia.correct_answer, childCategory)">Save this trivia</button>
 </div>
