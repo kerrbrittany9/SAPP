@@ -1,4 +1,11 @@
-var config = {
+# SAPP
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+
+## Configure API-KEYs
+1. Create a file (src/app/api-keys.ts) for Firebase API configuration that contains the following code:
+```
+var masterFirebaseConfig = {
    apiKey: "AIzaSyCBi3umGRUzFLVtCLXvgrQFjhHTlmNS4WA",
    authDomain: "sapp-f1a58.firebaseapp.com",
    databaseURL: "https://sapp-f1a58.firebaseio.com",
@@ -13,6 +20,13 @@ var config = {
 # Sapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+ ```
+2. Create a 2nd file (src/app/api-key-google.ts) for GoogleBooks API configuration that contains the following code:
+```
+ var masterGoogleBooksConfig = {
+   apiKey: "AIzaSyDikkvF4JUdJQKIcgpcZRYgOGAr3rdTKL4";
+ }
+```
 
 ## Development server
 
