@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { masterGoogleBooksConfig } from '../api-key-google';
 import { LiteratureService } from '../literature.service';
+import { BookConversation } from '../book-conversation.model';
 
 @Component({
   selector: 'app-literature',
@@ -22,5 +23,9 @@ export class LiteratureComponent implements OnInit {
       this.books = response.json().items;
     });
     this.searchDone = true;
+  }
+
+  beginSaveBookConvo(title: string, authors: string[], coverImage: string, comments: string) {
+    var newBookConvo = new BookConversation(title, authors, coverImage, comments);
   }
 }
