@@ -16,11 +16,11 @@ var masterFirebaseConfig = {
 
  Behance: p9NvD0geVlicPixI9eG1hEROZnK4bijW
  opentdb.com
-
+```
 # Sapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
- ```
+
 2. Create a 2nd file (src/app/api-key-google.ts) for GoogleBooks API configuration that contains the following code:
 ```
  var masterGoogleBooksConfig = {
