@@ -17,7 +17,6 @@ export class EventsComponent implements OnInit {
 
   ngOnInit() {
     this.events = this.eventService.getEvents();
-    console.log(this.events);
   }
 
   showAddEventForm() {
@@ -28,7 +27,6 @@ export class EventsComponent implements OnInit {
     var newEvent = new Event(name, date, attendees);
     this.eventService.addEvent(newEvent);
     this.addingNewEvent = false;
-    console.log(newEvent);
   }
 
 }
