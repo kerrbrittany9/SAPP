@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="well">
+    <h2>Current Events</h2>
+    <div class="form-group">
+      <label>Enter a news source:</label>
+      <input #newSource>
+      <label>Category</label>
+      <input #newCategory>
+    </div>
+    <button (click)="beginNewsSearch(newSource.value, newCategory.value)">Search The News World</button>
+  </div>
+</div>
