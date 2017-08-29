@@ -3,9 +3,12 @@
     <h2>Current Events</h2>
     <div class="form-group">
       <label>Enter a news source:</label>
-      <input #newSource>
+      <input #newsSource>
     </div>
-    <button (click)="beginNewsSearch(newSource.value)">Search The News World</button>
+    <button (click)="getNews(newsSource.value)">Search The News World</button>
   </div>
 </div>
-<app-current-events-list></app-current-events-list>
+
+<div *ngIf='articles'>
+  <app-current-events-list [childArticles]='articles'></app-current-events-list>
+</div>
