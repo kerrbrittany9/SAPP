@@ -16,8 +16,9 @@
       <li *ngIf ="!isLoggedIn"> \\if the user isn’t logged in, we’ll have an event binding to login.
         <a (click)="login()">Log in</a>
       </li>
+      <li><a routerLink="trivia">Trivia</a></li>
+      <li><a routerLink="literature">Literature</a></li>
     </ul>
-    <a routerLink="trivia">Trivia</a>
   </div>
 </nav>
 
