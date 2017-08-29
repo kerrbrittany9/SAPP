@@ -24,6 +24,7 @@ export class LiteratureListComponent implements OnInit {
     var authorsId = authors.length;
     var id = titleId + "-" + authorsId;
     var newBookConvo = new BookConversation(title, authors, coverImage, comments, id);
+    this.literatureService.addBookConvo(newBookConvo);
   }
 
 }

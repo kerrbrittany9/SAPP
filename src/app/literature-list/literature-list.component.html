@@ -15,10 +15,10 @@
         </div>
       </div>
       <div class="col-md-8">
+        <button (click)="beginSaveBookConvo(book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.imageLinks.smallThumbnail, newComments.value)">Save This Book Info</button>
         <div class="book-description">
           <p>{{book.volumeInfo.description}}</p>
           <br>
-          <button (click)="beginSaveBookConvo(book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.imageLinks.smallThumbnail, newComments.value)">Save This Book Info</button>
         </div>
       </div>
     </div>
