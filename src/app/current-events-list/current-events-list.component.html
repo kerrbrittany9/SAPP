@@ -1,11 +1,13 @@
-<div class="well">
-  <h2>List of  Articles</h2>
   <div *ngFor="let article of childArticles">
-    <h2>{{article.title}}</h2>
+    <div class="well" id='article'>
+    <h2 (click)='showArticle=!showArticle'>{{article.title}}</h2>
     <h4>{{article.author}}</h4>
-    <img src="{{article.urlToImage}}" alt="Image of Book Cover" />
+    <p>{{date}}</p>
     <br>
-
-    <!-- <button (click)="beginSaveBookConvo(book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.imageLinks.smallThumbnail, newComments.value)">Save This Book Info</button> -->
+    <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage'/>
+    <br>
+    <div *ngIf='showArticle'>
+      <p>{{article.description}}</p>
+    </div>
   </div>
 </div>
