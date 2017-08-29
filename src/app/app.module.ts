@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { masterGoogleBooksConfig } from './api-key-google';
+import { masterNewsApiConfig } from './api-key-current-events';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -17,6 +18,10 @@ import { CurrentEventsListComponent } from './current-events-list/current-events
 
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
+}
+
+export const newsApiConfig = {
+  apiKey: masterNewsApiConfig.apiKey,
 }
 
 export const firebaseConfig = {
