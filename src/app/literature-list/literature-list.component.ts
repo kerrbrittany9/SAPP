@@ -25,6 +25,7 @@ export class LiteratureListComponent implements OnInit {
     var id = titleId + "-" + authorsId;
     var newBookConvo = new BookConversation(title, authors, coverImage, comments, id);
     this.literatureService.addBookConvo(newBookConvo);
+    alert("This book information has been saved!");
   }
 
 }
