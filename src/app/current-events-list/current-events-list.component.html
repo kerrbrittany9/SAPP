@@ -1,9 +1,9 @@
 <div class="well">
   <h2>List of  Articles</h2>
-  <div *ngFor="let article of articles">
+  <div *ngFor="let article of childArticles">
     <h2>{{article.title}}</h2>
     <h4>{{article.author}}</h4>
-    <!-- <img src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="Image of Book Cover" /> -->
+    <img src="{{article.urlToImage}}" alt="Image of Book Cover" />
     <br>
 
     <!-- <button (click)="beginSaveBookConvo(book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.imageLinks.smallThumbnail, newComments.value)">Save This Book Info</button> -->
