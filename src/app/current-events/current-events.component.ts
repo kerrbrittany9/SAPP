@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { masterNewsApiConfig } from '../api-key-current-events';
+import { Observable } from 'rxjs/Observable';
 import { CurrentEventsService } from '../current-events.service'
 
 
@@ -9,16 +10,21 @@ import { CurrentEventsService } from '../current-events.service'
   styleUrls: ['./current-events.component.css'],
   providers: [CurrentEventsService]
 })
-export class CurrentEventsComponent implements OnInit {
 
-  constructor(private currentEventsService: CurrentEventsService) { }
+export class CurrentEventsComponent implements OnInit {
 
   ngOnInit() {
   }
+    articles: any[] = null;
 
-  beginNewsSearch(source: string, category: string){
-    var callString = 'https://newsapi.org/v1/articles?source='+ source + '&category=' + category + '&apikey=54c70d579915400ebe7b9d7c36f6fb77';
-    this.currentEventsService.getNews(callString)
+    constructor(private currentEventsService: CurrentEventsService) { }
+
+    getNews(source: string){
+    this.currentEventsService.getBySource(source).subscribe(response => {this.articles = response.json().articles;
+
+      console.log(this.articles);
+    });
+
   }
 
 }
