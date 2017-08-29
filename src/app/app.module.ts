@@ -12,6 +12,8 @@ import { routing } from './app.routing';
 import { TriviaFormComponent } from './trivia-form/trivia-form.component';
 import { TriviaListComponent } from './trivia-list/trivia-list.component';
 import { LiteratureComponent } from './literature/literature.component';
+import { CurrentEventsComponent } from './current-events/current-events.component';
+import { CurrentEventsListComponent } from './current-events-list/current-events-list.component';
 
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
@@ -30,7 +32,9 @@ export const firebaseConfig = {
     WelcomeComponent,
     TriviaFormComponent,
     TriviaListComponent,
-    LiteratureComponent
+    LiteratureComponent,
+    CurrentEventsComponent,
+    CurrentEventsListComponent
   ],
   imports: [
     BrowserModule,
