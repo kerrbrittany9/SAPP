@@ -13,6 +13,7 @@ import { TriviaFormComponent } from './trivia-form/trivia-form.component';
 import { TriviaListComponent } from './trivia-list/trivia-list.component';
 import { LiteratureComponent } from './literature/literature.component';
 import { AddBookConversationComponent } from './add-book-conversation/add-book-conversation.component';
+import { EventsComponent } from './events/events.component';
 
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
@@ -32,7 +33,8 @@ export const firebaseConfig = {
     TriviaFormComponent,
     TriviaListComponent,
     LiteratureComponent,
-    AddBookConversationComponent
+    AddBookConversationComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
