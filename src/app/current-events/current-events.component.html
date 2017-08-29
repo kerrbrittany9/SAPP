@@ -4,9 +4,8 @@
     <div class="form-group">
       <label>Enter a news source:</label>
       <input #newSource>
-      <label>Category</label>
-      <input #newCategory>
     </div>
-    <button (click)="beginNewsSearch(newSource.value, newCategory.value)">Search The News World</button>
+    <button (click)="beginNewsSearch(newSource.value)">Search The News World</button>
   </div>
 </div>
+<app-current-events-list></app-current-events-list>
