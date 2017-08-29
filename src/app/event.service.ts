@@ -27,15 +27,14 @@ export class EventService {
     return this.af.object('events/' + eventName);
   }
 
-  addTrivia(triviaId: string) {
-    // var eventEntryInFirebase = this.getEventByName()
+  saveTriviaToEvent(localEditedEvent) {
+    var eventEntryInFirebase = this.getEventByName(localEditedEvent.$key);
+    eventEntryInFirebase.update({
+      name: localEditedEvent.name,
+      date: localEditedEvent.date,
+      attendees: localEditedEvent.attendees,
+      conversations: localEditedEvent.conversations
+    });
   }
-
-  // saveTriviaToEvent(selectedEventName, trivia: Trivia) {
-  //   this.events.forEach(function(currentEvent) {
-  //     if (currentEvent['name'] === selectedEventName) {
-  //     }
-  //   });
-  // }
 
 }

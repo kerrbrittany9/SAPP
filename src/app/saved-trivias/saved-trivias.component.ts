@@ -25,8 +25,8 @@ export class SavedTriviasComponent implements OnInit {
   }
 
   sendTriviaToEvent(event: Event, trivia: Trivia) {
-    console.log(event);
-    console.log(trivia);
+    event.conversations.push(trivia.id);
+    this.eventService.saveTriviaToEvent(event);
     // this.eventService.getEvents().subscribe(dataLastEmittedFromObserver => {
     //   this.eventList = dataLastEmittedFromObserver;
     //   this.eventList.forEach(function(currentEvent) {
@@ -35,7 +35,6 @@ export class SavedTriviasComponent implements OnInit {
     //     this.eventService.addTrivia(trivia.id);
     //   });
     // });
-    // this.eventService.saveTriviaToEvent(selectedEvent, trivia);
   }
 
 }
