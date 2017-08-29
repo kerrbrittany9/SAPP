@@ -2,9 +2,9 @@
     <div class="well" id='article'>
     <h2 (click)='showArticle=!showArticle'>{{article.title}}</h2>
     <h4>{{article.author}}</h4>
-    <p>{{date}}</p>
+    <p>{{article.publishedAt}}</p>
     <br>
-    <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage'/>
+    <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage' (click)='showArticle=!showArticle'/>
     <br>
     <div *ngIf='showArticle'>
       <p>{{article.description}}</p>

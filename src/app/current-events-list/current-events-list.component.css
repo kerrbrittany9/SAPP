@@ -16,3 +16,7 @@
 .byline {
   text-align: center;
 }
+
+#articleDetails {
+  overflow: hidden;
+}
