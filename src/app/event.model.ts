@@ -1,4 +1,4 @@
 export class Event {
-  conversations: string[] = null;
+  conversations: any[] = [""];
   constructor(public name: string, public date: string, public attendees: string) {}
 }

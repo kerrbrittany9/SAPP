@@ -27,6 +27,7 @@ export class EventsComponent implements OnInit {
     var newEvent = new Event(name, date, attendees);
     this.eventService.addEvent(newEvent);
     this.addingNewEvent = false;
+    // console.log(newEvent);
   }
 
 }
