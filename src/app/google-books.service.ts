@@ -3,12 +3,14 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class LiteratureService {
+export class GoogleBooksService {
 
   constructor(private http: Http) { }
 
-  // getLiteratureData(stringToCall: string) {
-  //   console.log(stringToCall);
-  //   return this.http.get(stringToCall);
-  // }
+  getLiteratureData(stringToCall: string) {
+    console.log(stringToCall);
+    return this.http.get(stringToCall);
+  }
+
+
 }
