@@ -8,7 +8,7 @@ export class GoogleBooksService {
   constructor(private http: Http) { }
 
   getLiteratureData(stringToCall: string) {
-    console.log(stringToCall);
+    // console.log(stringToCall);
     return this.http.get(stringToCall);
   }
 

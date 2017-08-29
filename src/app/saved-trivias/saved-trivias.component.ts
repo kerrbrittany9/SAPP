@@ -3,6 +3,7 @@ import { TriviaService } from '../trivia.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Event } from '../event.model';
 import { EventService } from '../event.service';
+import { Trivia } from '../trivia.model';
 
 
 @Component({
@@ -14,16 +15,27 @@ import { EventService } from '../event.service';
 export class SavedTriviasComponent implements OnInit {
   trivias: FirebaseListObservable<any[]>;
   events: FirebaseListObservable<any[]>;
+  eventList;
 
   constructor(private triviaService: TriviaService, private eventService: EventService) { }
 
   ngOnInit() {
-    this.trivias = this.triviaService.getTrivas();
+    this.trivias = this.triviaService.getTrivias();
     this.events = this.eventService.getEvents();
   }
 
-  sendTriviaToEvent(selectedEvent) {
-
+  sendTriviaToEvent(event: Event, trivia: Trivia) {
+    console.log(event);
+    console.log(trivia);
+    // this.eventService.getEvents().subscribe(dataLastEmittedFromObserver => {
+    //   this.eventList = dataLastEmittedFromObserver;
+    //   this.eventList.forEach(function(currentEvent) {
+    //     var convoArr: any[] = currentEvent.conversations;
+    //     convoArr.push(trivia.id);
+    //     this.eventService.addTrivia(trivia.id);
+    //   });
+    // });
+    // this.eventService.saveTriviaToEvent(selectedEvent, trivia);
   }
 
 }

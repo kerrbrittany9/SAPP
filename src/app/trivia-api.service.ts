@@ -13,12 +13,17 @@ export class TriviaApiService {
     return this.http.get("https://opentdb.com/api.php?amount=1&category=" + category)
   }
 
-  saveTriviaObject(question: string, incorrect: string, correct: string, category: string) {
+  saveTriviaObject(question: string, incorrect: string, correct: string, category: string, id: string) {
     return this.http.get("https://opentdb.com/api.php?amount=1&category=" + category)
       .subscribe(response => {
         let foundTrivia: Trivia;
-        foundTrivia = new Trivia(question, incorrect, correct, category);
-        console.log(foundTrivia);
+        var splitQuestion = question.split(" ");
+        var questionId = splitQuestion.join("-");
+        var correctId = correct.length;
+        var id = questionId + "-" + correctId;
+
+        foundTrivia = new Trivia(question, incorrect, correct, category, id);
+        // console.log(foundTrivia);
         this.triviaService.addTrivia(foundTrivia);
     });
   }

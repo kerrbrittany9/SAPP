@@ -4,10 +4,13 @@
     <h5>{{trivia.correctAnswer}}</h5>
 
     <div class="well">
-      <select #selectedEvent>
-        <option *ngFor="let event of events | async" value="{{event.name}}">{{event.name}}</option>
+      Save Trivia to Specific Event:
+      <!-- <div *ngFor="let event of events | async">
+      </div> -->
+      <select [(ngModel)]="selectedEvent">
+        <option *ngFor="let event of events | async" [ngValue]="event">{{event.name}}</option>
       </select>
-      <button (click)="sendTriviaToEvent(selectedEvent.value)">Save Trivia To Event</button>
+      <button (click)="sendTriviaToEvent(selectedEvent, trivia)">Save to this event</button>
     </div>
   </div>
 </div>

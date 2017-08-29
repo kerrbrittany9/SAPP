@@ -14,7 +14,7 @@ export class TriviaService {
     this.trivia.push(newTrivia);
   }
 
-  getTrivas() {
+  getTrivias() {
     return this.trivia;
   }
 
