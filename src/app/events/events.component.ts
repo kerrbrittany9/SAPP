@@ -11,16 +11,23 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class EventsComponent implements OnInit {
   events: FirebaseListObservable<any[]>;
+  addingNewEvent: boolean = false;
 
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
     this.events = this.eventService.getEvents();
+    console.log(this.events);
+  }
+
+  showAddEventForm() {
+    this.addingNewEvent = true;
   }
 
   beginAddingNewEvent(name: string, date: string, attendees: string) {
     var newEvent = new Event(name, date, attendees);
     this.eventService.addEvent(newEvent);
+    this.addingNewEvent = false;
     console.log(newEvent);
   }
 
