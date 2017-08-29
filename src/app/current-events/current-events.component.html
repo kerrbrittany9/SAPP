@@ -1,10 +1,22 @@
 <div class="container-fluid">
   <div class="well">
     <h2>Current Events</h2>
-    <div class="form-group">
-      <label>Enter a news source:</label>
-      <input #newsSource>
-    </div>
+      <label>Choose a news source:</label>
+      <select #newsSource>
+        <option selected>--</option>
+        <option value='associated-press'>Associated Press</option>
+        <option value='bbc-news'>BBC News</option>
+        <option value='cnn'>CNN</option>
+        <option value='entertainment-weekly'>Entertainment Weekly</option>
+        <option value='espn'>ESPN</option>
+        <option value='fortune'>Fortune</option>
+        <option value='newsweek'>Newsweek</option>
+        <option value='techcrunch'>TechCrunch</option>
+        <option value='the-gaudrian-uk'>The Gaurdian (UK)</option>
+        <option value='the-new-york-times'>New York Times</option>
+        <option value='the-wall-street-journal'>Wall Street Journal</option>
+        <option value='usa-today'>USA Today</option>
+      </select>
     <button (click)="getNews(newsSource.value)">Search The News World</button>
   </div>
 </div>
