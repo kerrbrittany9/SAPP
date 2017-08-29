@@ -11,6 +11,7 @@ import { CurrentEventsComponent } from '../current-events/current-events.compone
 })
 export class CurrentEventsListComponent {
 @Input() childArticles;
+showArticle = false;
 
   constructor(private currentEventsService: CurrentEventsService) { }
 
