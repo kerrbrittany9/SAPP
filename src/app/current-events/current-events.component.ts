@@ -21,7 +21,6 @@ export class CurrentEventsComponent implements OnInit {
 
     getNews(source: string){
     this.currentEventsService.getBySource(source).subscribe(response => {this.articles = response.json().articles;
-
       console.log(this.articles);
     });
 
