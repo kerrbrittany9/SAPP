@@ -1,0 +1,13 @@
+<div *ngFor="let trivia of trivias | async">
+  <div class="well">
+    <h4>{{trivia.question}}</h4>
+    <h5>{{trivia.correctAnswer}}</h5>
+
+    <div class="well">
+      <select #selectedEvent>
+        <option *ngFor="let event of events | async" value="{{event.name}}">{{event.name}}</option>
+      </select>
+      <button (click)="sendTriviaToEvent(selectedEvent.value)">Save Trivia To Event</button>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,7 @@ import { LiteratureComponent } from './literature/literature.component';
 import { AddBookConversationComponent } from './add-book-conversation/add-book-conversation.component';
 import { EventsComponent } from './events/events.component';
 import { LiteratureListComponent } from './literature-list/literature-list.component';
+import { SavedTriviasComponent } from './saved-trivias/saved-trivias.component';
 
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
@@ -36,7 +37,8 @@ export const firebaseConfig = {
     LiteratureComponent,
     AddBookConversationComponent,
     EventsComponent,
-    LiteratureListComponent
+    LiteratureListComponent,
+    SavedTriviasComponent
   ],
   imports: [
     BrowserModule,

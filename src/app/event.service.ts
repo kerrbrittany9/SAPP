@@ -20,4 +20,8 @@ export class EventService {
     this.events.push(newEvent);
   }
 
+  saveTriviaToEvent() {
+    
+  }
+
 }
