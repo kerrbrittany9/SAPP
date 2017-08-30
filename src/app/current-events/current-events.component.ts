@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { masterNewsApiConfig } from '../api-key-current-events';
 import { Observable } from 'rxjs/Observable';
-import { CurrentEventsService } from '../current-events.service'
-
+import { CurrentEventsService } from '../current-events.service';
+import {CurrentEventApiService} from '../current-event-api.service';
 
 @Component({
   selector: 'app-current-events',
   templateUrl: './current-events.component.html',
   styleUrls: ['./current-events.component.css'],
-  providers: [CurrentEventsService]
+  providers: [CurrentEventsService, CurrentEventApiService]
 })
 
 export class CurrentEventsComponent implements OnInit {
 
   ngOnInit() {
   }
-    articles: any[] = null;
+    articles: any[];
 
-    constructor(private currentEventsService: CurrentEventsService) { }
+    constructor(private currentEventsService: CurrentEventsService, private currentEventApiService: CurrentEventApiService) { }
 
     getNews(source: string){
-    this.currentEventsService.getBySource(source).subscribe(response => {this.articles = response.json().articles;
+    this.currentEventApiService.getBySource(source).subscribe(response => {this.articles = response.json().articles;
       console.log(this.articles);
     });
-
   }
+
 
 }

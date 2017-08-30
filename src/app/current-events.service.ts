@@ -1,15 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { CurrentEvent } from './current-event.model';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 
 @Injectable()
 export class CurrentEventsService {
-articleDetails = null;
+currentEvent: FirebaseListObservable<any[]>;
 
-  constructor(private http: Http) { }
+  constructor(private af: AngularFireDatabase) { }
 
-  getBySource(source: string) {
-    return this.http.get('https://newsapi.org/v1/articles?source='+ source + '&apikey=54c70d579915400ebe7b9d7c36f6fb77');
+  addCurrentEvent(newCurrentEvent: CurrentEvent) {
+    this.currentEvent.push(newCurrentEvent);
   }
 
+  getCurrentEvents(source) {
+    return this.currentEvent;
+  }
+
+  // getCurrentEvents() {
+  //   return this.currentEvent;
+  // }
 }

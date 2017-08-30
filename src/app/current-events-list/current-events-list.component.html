@@ -6,6 +6,7 @@
     <br>
     <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage' (click)='showArticle=!showArticle'/>
     <br>
+    <button (click)="saveCurrentEvent(article.title, article.description)">Save Current Event</button>
     <div *ngIf='showArticle'>
       <p>{{article.description}}</p>
     </div>
