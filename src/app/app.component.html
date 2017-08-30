@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" routerLink="">Authentication Example</a>
+      <a class="navbar-brand" routerLink="">Home</a>
       <h1>
         {{title}}
       </h1>
@@ -17,10 +17,11 @@
       <li *ngIf ="!isLoggedIn"> \\if the user isn’t logged in, we’ll have an event binding to login.
         <a (click)="login()">Log in</a>
       </li>
-      <li><a routerLink="trivia">Trivia</a></li>
       <li><a routerLink="literature">Literature</a></li>
-        <li><a routerLink="trivia">Trivia</a></li>
-        <li><a routerLink="current-events">Current Events</a></li>
+      <li><a routerLink="literature">Literature</a></li>
+      <li><a routerLink="trivia">Trivia</a></li>
+      <li><a routerLink="current-events">Current Events</a></li>
+      <li><a routerLink="events">Events</a></li>
     </ul>
   </div>
 </nav>

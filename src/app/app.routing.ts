@@ -4,6 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { TriviaFormComponent } from './trivia-form/trivia-form.component';
 import { LiteratureComponent } from './literature/literature.component';
 import { CurrentEventsComponent } from './current-events/current-events.component';
+import { EventsComponent } from  './events/events.component';
 
 const appRoutes: Routes = [
   {
@@ -21,6 +22,10 @@ const appRoutes: Routes = [
   {
     path: 'current-events',
     component: CurrentEventsComponent
+  },
+  {
+    path: 'events',
+    component: EventsComponent
   }
 ];
 
