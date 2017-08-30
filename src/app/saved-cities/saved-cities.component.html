@@ -1,0 +1,9 @@
+<br><br>
+<div class="container">
+  <h2>Here are your saved notes on some cities:</h2>
+  <div *ngFor="let city of cities | async">
+    <div class="well">
+      <h3>{{city.comments}}</h3>
+    </div>
+  </div>
+</div>

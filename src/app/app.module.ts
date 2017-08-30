@@ -22,6 +22,7 @@ import { CurrentEventsComponent } from './current-events/current-events.componen
 import { CurrentEventsListComponent } from './current-events-list/current-events-list.component';
 import { SavedBooksComponent } from './saved-books/saved-books.component';
 import { CitiesComponent } from './cities/cities.component';
+import { SavedCitiesComponent } from './saved-cities/saved-cities.component';
 
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
@@ -52,7 +53,8 @@ export const firebaseConfig = {
     CurrentEventsComponent,
     CurrentEventsListComponent,
     SavedBooksComponent,
-    CitiesComponent
+    CitiesComponent,
+    SavedCitiesComponent
   ],
   imports: [
     BrowserModule,
