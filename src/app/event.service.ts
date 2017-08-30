@@ -37,4 +37,14 @@ export class EventService {
     });
   }
 
+  saveBookToEvent(localEditedEvent) {
+    var eventEntryInFirebase = this.getEventByName(localEditedEvent.$key);
+    eventEntryInFirebase.update({
+      name: localEditedEvent.name,
+      date: localEditedEvent.date,
+      attendees: localEditedEvent.attendees,
+      conversations: localEditedEvent.conversations
+    });
+  }
+
 }

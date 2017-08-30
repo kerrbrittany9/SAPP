@@ -1,0 +1,16 @@
+<div *ngFor="let book of books | async">
+  <div class="well">
+    <h4>{{book.title}}</h4>
+    <h5>{{book.authors}}</h5>
+
+    <div class="well">
+      Save Book to Specific Event:
+      <!-- <div *ngFor="let event of events | async">
+      </div> -->
+      <select [(ngModel)]="selectedEvent">
+        <option *ngFor="let event of events | async" [ngValue]="event">{{event.name}}</option>
+      </select>
+      <button (click)="sendBookToEvent(selectedEvent, book)">Save to this event</button>
+    </div>
+  </div>
+</div>

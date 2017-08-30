@@ -21,6 +21,7 @@ import { LiteratureListComponent } from './literature-list/literature-list.compo
 import { SavedTriviasComponent } from './saved-trivias/saved-trivias.component';
 import { CurrentEventsComponent } from './current-events/current-events.component';
 import { CurrentEventsListComponent } from './current-events-list/current-events-list.component';
+import { SavedBooksComponent } from './saved-books/saved-books.component';
 
 
 export const googleBooksConfig = {
@@ -50,7 +51,8 @@ export const firebaseConfig = {
     LiteratureListComponent,
     SavedTriviasComponent,
     CurrentEventsComponent,
-    CurrentEventsListComponent
+    CurrentEventsListComponent,
+    SavedBooksComponent
   ],
   imports: [
     BrowserModule,

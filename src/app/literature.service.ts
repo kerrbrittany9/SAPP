@@ -16,6 +16,10 @@ export class LiteratureService {
     this.bookConversations.push(newBookConvo);
   }
 
+  getBooks() {
+    return this.bookConversations;
+  }
+
   // getLiteratureData(stringToCall: string) {
   //   console.log(stringToCall);
   //   return this.http.get(stringToCall);
