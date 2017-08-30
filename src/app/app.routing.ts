@@ -5,6 +5,8 @@ import { TriviaFormComponent } from './trivia-form/trivia-form.component';
 import { LiteratureComponent } from './literature/literature.component';
 import { CurrentEventsComponent } from './current-events/current-events.component';
 import { EventsComponent } from  './events/events.component';
+import { CitiesComponent } from './cities/cities.component';
+
 
 const appRoutes: Routes = [
   {
@@ -26,6 +28,10 @@ const appRoutes: Routes = [
   {
     path: 'events',
     component: EventsComponent
+  },
+  {
+    path: 'cities',
+    component: CitiesComponent
   }
 ];
 

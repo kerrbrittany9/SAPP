@@ -9,7 +9,6 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { TriviaFormComponent } from './trivia-form/trivia-form.component';
@@ -22,7 +21,7 @@ import { SavedTriviasComponent } from './saved-trivias/saved-trivias.component';
 import { CurrentEventsComponent } from './current-events/current-events.component';
 import { CurrentEventsListComponent } from './current-events-list/current-events-list.component';
 import { SavedBooksComponent } from './saved-books/saved-books.component';
-
+import { CitiesComponent } from './cities/cities.component';
 
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
@@ -53,6 +52,7 @@ export const firebaseConfig = {
     CurrentEventsComponent,
     CurrentEventsListComponent,
     SavedBooksComponent
+    CitiesComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +61,7 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

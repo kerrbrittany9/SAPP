@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>What city would you like information on?</h2>
+  <form>
+    <label for="city">Choose a city:</label>
+    <select #city>
+      <option value="austin">Austin</option>
+      <option value="barcelona">Barcelona</option>
+      <option value="berlin">Berlin</option>
+      <option value="cairo">Cairo</option>
+      <option value="cape-town">Cape Town</option>
+      <option value="chicago">Chicago</option>
+      <option value="detroit">Detroit</option>
+      <option value="florence">Florence</option>
+      <option value="havana">Havana</option>
+      <option value="ho-chi-minh-city">Ho Chi Minh</option>
+      <option value="kiev">Kiev</option>
+      <option value="lisbon">Lisbon</option>
+      <option value="manchester">Manchester</option>
+      <option value="mexico-city">Mexico City</option>
+      <option value="mumbai">Mumbai</option>
+      <option value="portland-or">Portland</option>
+      <option value="rio-de-janeiro">Rio de Janeiro</option>
+      <option value="san-francisco-bay-area">San Francisco</option>
+      <option value="seoul">Seoul</option>
+      <option value="stockholm">Stockholm</option>
+      <option value="vancouver">Vancouver, BC</option>
+      <option value="zurich">Zurich</option>
+    </select>
+    <button (click)="getCityInfo(city.value); city.value = '';">Get it!</button>
+  </form>
+
+  <div *ngIf="searchDone === true">
+    <h1><span class="capitalize"><em>{{selection}}</em></span></h1>
+    <div *ngFor="let stat of stats;">
+      <p>{{stat.name}}: {{stat.score_out_of_10 | number : '1.2-2'}} out of 10</p>
+    </div>
+    <br>
+    <label for="city-notes">Useful information? Write down some notes to save for later.</label><br>
+    <textarea #newCityNotes></textarea>
+    <br>
+    <button (click)="saveCityNotes(newCityNotes.value)">Save notes</button>
+  </div>
+</div>
