@@ -8,23 +8,18 @@ import { LiteratureService } from '../literature.service';
   selector: 'app-literature-list',
   templateUrl: './literature-list.component.html',
   styleUrls: ['./literature-list.component.css'],
-  providers: [LiteratureService]
+  providers: [LiteratureService, GoogleBooksService]
 })
 export class LiteratureListComponent implements OnInit {
   @Input() childBooks;
 
-  constructor(private literatureService: LiteratureService) { }
+  constructor(private literatureService: LiteratureService, private googleBooksService: GoogleBooksService) { }
 
   ngOnInit() {
   }
 
-  beginSaveBookConvo(title: string, authors: string[], coverImage: string, comments: string) {
-    var splitTitle = title.split(" ");
-    var titleId = splitTitle.join("-");
-    var authorsId = authors.length;
-    var id = titleId + "-" + authorsId;
-    var newBookConvo = new BookConversation(title, authors, coverImage, comments, id);
-    this.literatureService.addBookConvo(newBookConvo);
+  saveBook(title: string, authors: string, coverImage: string, comments: string, id: string) {
+    this.googleBooksService.beginSaveBookConvo(title, authors, coverImage, comments, id);
     alert("This book information has been saved!");
   }
 

@@ -48,7 +48,7 @@ export const firebaseConfig = {
     AddBookConversationComponent,
     EventsComponent,
     LiteratureListComponent,
-    SavedTriviasComponent
+    SavedTriviasComponent,
     CurrentEventsComponent,
     CurrentEventsListComponent
   ],

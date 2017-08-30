@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { masterGoogleBooksConfig } from '../api-key-google';
 import { GoogleBooksService } from '../google-books.service';
 import { BookConversation } from '../book-conversation.model';
+import { LiteratureService } from '../literature.service';
 
 
 
@@ -10,19 +11,18 @@ import { BookConversation } from '../book-conversation.model';
   selector: 'app-literature',
   templateUrl: './literature.component.html',
   styleUrls: ['./literature.component.css'],
-  providers: [GoogleBooksService]
+  providers: [GoogleBooksService, LiteratureService ]
 })
 export class LiteratureComponent implements OnInit {
-  books: any[] = null;
+  books: any[];
 
-  constructor(private googleBooksService: GoogleBooksService) { }
+  constructor(private googleBooksService: GoogleBooksService, private literature: LiteratureService) { }
 
   ngOnInit() {
   }
 
   beginLiteratureSearch(keyword: string) {
-    var callString = "https://www.googleapis.com/books/v1/volumes?q=" + keyword;
-    this.googleBooksService.getLiteratureData(callString).subscribe(response => {
+    this.googleBooksService.getLiteratureData(keyword).subscribe(response => {
       this.books = response.json().items;
     });
   }
