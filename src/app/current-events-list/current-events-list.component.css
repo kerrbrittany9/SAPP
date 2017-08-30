@@ -1,0 +1,22 @@
+#newsImage {
+  width: 95%;
+  display: block;
+  margin: auto;
+  bottom: 2%;
+}
+
+#article {
+  width: 30%;
+  float: left;
+  height: 500px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.byline {
+  text-align: center;
+}
+
+#articleDetails {
+  overflow: hidden;
+}

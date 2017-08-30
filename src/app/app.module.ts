@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { masterGoogleBooksConfig } from './api-key-google';
+import { masterNewsApiConfig } from './api-key-current-events';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -18,9 +19,16 @@ import { AddBookConversationComponent } from './add-book-conversation/add-book-c
 import { EventsComponent } from './events/events.component';
 import { LiteratureListComponent } from './literature-list/literature-list.component';
 import { SavedTriviasComponent } from './saved-trivias/saved-trivias.component';
+import { CurrentEventsComponent } from './current-events/current-events.component';
+import { CurrentEventsListComponent } from './current-events-list/current-events-list.component';
+
 
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
+}
+
+export const newsApiConfig = {
+  apiKey: masterNewsApiConfig.apiKey,
 }
 
 export const firebaseConfig = {
@@ -41,6 +49,8 @@ export const firebaseConfig = {
     EventsComponent,
     LiteratureListComponent,
     SavedTriviasComponent
+    CurrentEventsComponent,
+    CurrentEventsListComponent
   ],
   imports: [
     BrowserModule,
