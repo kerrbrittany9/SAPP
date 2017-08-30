@@ -8,13 +8,13 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { TriviaFormComponent } from './trivia-form/trivia-form.component';
 import { TriviaListComponent } from './trivia-list/trivia-list.component';
 import { LiteratureComponent } from './literature/literature.component';
 import { AddBookConversationComponent } from './add-book-conversation/add-book-conversation.component';
+import { CitiesComponent } from './cities/cities.component';
 
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
@@ -34,7 +34,8 @@ export const firebaseConfig = {
     TriviaFormComponent,
     TriviaListComponent,
     LiteratureComponent,
-    AddBookConversationComponent
+    AddBookConversationComponent,
+    CitiesComponent
   ],
   imports: [
     BrowserModule,

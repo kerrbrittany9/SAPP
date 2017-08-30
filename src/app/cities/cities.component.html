@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>What city would you like information on?</h2>
+  <form>
+    <label for="city">Type a city</label>
+    <input #city>
+    <button (click)="getCityInfo(city.value)">Get it!</button>
+  </form>
+
+  <div *ngIf="searchDone === true">
+    <h1>{{selection}}</h1>
+    <div *ngFor="let stat of stats;">
+      <p>{{stat.name}}: {{stat.score_out_of_10}} out of 10</p>
+    </div>
+  </div>
+</div>
