@@ -12,7 +12,9 @@ import { TriviaService } from '../trivia.service';
 export class TriviaListComponent implements OnInit {
   @Input() childChoice;
   @Input() childCategory;
-  triviaResult: any[];
+  @Input() childTriviaList;
+  // triviaResult: any[];
+  // triviaList;
 
   constructor(private triviaAnswers: TriviaApiService, private triviaService: TriviaService) { }
 
@@ -26,11 +28,25 @@ export class TriviaListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.triviaAnswers.getTriviaResults(this.childCategory).subscribe(response => {
-      this.triviaResult = response.json().results;
-      console.log(this.childChoice);
-      console.log(this.triviaResult);
-    });
+    // this.triviaAnswers.getTriviaResults(this.childCategory).subscribe(response => {
+    //   var triviaToDisplay: any[] = [];
+    //   this.triviaResult = response.json().results;
+    //   this.triviaResult.forEach(function(currentTrivia) {
+    //     // console.log(currentTrivia.question.includes("&#039;"));
+    //     // console.log(currentTrivia.question.includes("&quot;"));
+    //     // console.log(currentTrivia);
+    //     if (currentTrivia.question.includes("&#039;") === true) {
+    //       currentTrivia.question = currentTrivia.question.replace(/&#039;/g, "'");
+    //     } else if (currentTrivia.question.includes("&quot;") === true) {
+    //       currentTrivia.question = currentTrivia.question.replace(/&quot;/g, "'");
+    //     } else if (currentTrivia.question.includes("&lsquo;") === true) {
+    //       currentTrivia.question = currentTrivia.question.replace(/&lsquo;/g, '"');
+    //     }
+    //     triviaToDisplay.push(currentTrivia);
+    //   });
+    //   console.log(triviaToDisplay[0]);
+    //   this.triviaList = triviaToDisplay;
+    // });
   }
 
 }
