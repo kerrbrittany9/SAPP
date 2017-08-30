@@ -16,6 +16,6 @@
   <button (click)="getTrivia(triviaCategory.value)">Get conversations</button>
 </form>
 
-<div *ngIf="trivia">
-  <app-trivia-list [childCategory]="choice" [childTrivia]="trivia"></app-trivia-list>
+<div *ngIf="triviaGotten === true">
+  <app-trivia-list [childChoice]="choice" [childCategory]="category"></app-trivia-list>
 </div>

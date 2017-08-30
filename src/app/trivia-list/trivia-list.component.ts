@@ -10,9 +10,11 @@ import { TriviaService } from '../trivia.service';
   providers: [ TriviaApiService, TriviaService ]
 })
 export class TriviaListComponent implements OnInit {
-  @Input() childTrivia;
+  @Input() childChoice;
   @Input() childCategory;
-  constructor(private triviaAnswers: TriviaApiService, private trivia: TriviaService) { }
+  triviaResult: any[];
+
+  constructor(private triviaAnswers: TriviaApiService, private triviaService: TriviaService) { }
 
   saveTrivia(question, incorrect, correct, category) {
     // console.log(question);
@@ -20,10 +22,15 @@ export class TriviaListComponent implements OnInit {
     // console.log(correct);
     // console.log(category);
     this.triviaAnswers.saveTriviaObject(question, incorrect, correct, category);
-    alert("this has been saved")
+    alert("this has been saved");
   }
 
   ngOnInit() {
+    this.triviaAnswers.getTriviaResults(this.childCategory).subscribe(response => {
+      this.triviaResult = response.json().results;
+      console.log(this.childChoice);
+      console.log(this.triviaResult);
+    });
   }
 
 }
