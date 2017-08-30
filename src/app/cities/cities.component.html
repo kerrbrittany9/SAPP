@@ -3,7 +3,7 @@
   <form>
     <label for="city">Type a city</label>
     <input #city>
-    <button (click)="getCityInfo(city.value)">Get it!</button>
+    <button (click)="getCityInfo(city.value); city.value = '';">Get it!</button>
   </form>
 
   <div *ngIf="searchDone === true">
