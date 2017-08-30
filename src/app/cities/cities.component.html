@@ -9,7 +9,7 @@
   <div *ngIf="searchDone === true">
     <h1>{{selection}}</h1>
     <div *ngFor="let stat of stats;">
-      <p>{{stat.name}}: {{stat.score_out_of_10}} out of 10</p>
+      <p>{{stat.name}}: {{stat.score_out_of_10 | number : '1.2-2'}} out of 10</p>
     </div>
   </div>
 </div>
