@@ -34,5 +34,10 @@
     <div *ngFor="let stat of stats;">
       <p>{{stat.name}}: {{stat.score_out_of_10 | number : '1.2-2'}} out of 10</p>
     </div>
+    <br>
+    <label for="city-notes">Useful information? Write down some notes to save for later.</label><br>
+    <textarea #newCityNotes></textarea>
+    <br>
+    <button (click)="saveCityNotes(newCityNotes.value)">Save notes</button>
   </div>
 </div>
