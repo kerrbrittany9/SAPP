@@ -25,7 +25,6 @@ export class SavedCitiesComponent implements OnInit {
   }
 
   sendCityToEvent(event: Event, city: CityConversation) {
-    // console.log(event);
     event.conversations.push(city.id);
     this.eventService.saveCityToEvent(event);
   }
