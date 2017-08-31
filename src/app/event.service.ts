@@ -18,14 +18,29 @@ export class EventService {
     return this.events;
   }
 
+  addEvent(newEvent: Event) {
+    this.events.push(newEvent);
+  }
+
   // checkForEventConvos(event) {
   //   event.conversations = event.conversations !== undefined ? event.conversations : [];
   // }
 
-
-  addEvent(newEvent: Event) {
-    this.events.push(newEvent);
-  }
+  // getTriviaConvosOfEventById(id: string) {
+  //   return this.af.object('trivia/' + id);
+  // }
+  //
+  // getBookConvosOfEventById(id: string) {
+  //   return this.af.object('bookConversations/' + id);
+  // }
+  //
+  // getEventConversationsByEventName(eventName: string) {
+  //   var eventConvos = this.getEventByName(eventName);
+  //   eventConvos.forEach(function(convoId: string) {
+  //     var triviaConvos = this.getTriviaConvosOfEventById(convoId);
+  //     var bookConvos = this.getBookConvosOfEventById(convoId);
+  //   });
+  // }
 
   getEventByName(eventName: string) {
     return this.af.object('events/' + eventName);
@@ -51,7 +66,7 @@ export class EventService {
       conversations: localEditedEvent.conversations
     });
   }
-  
+
   saveCurrentEventToEvent(localEditedEvent) {
     var eventEntryInFirebase = this.getEventByName(localEditedEvent.$key);
     eventEntryInFirebase.update({
@@ -61,8 +76,6 @@ export class EventService {
       conversations: localEditedEvent.conversations
     });
   }
-
-
 
   saveCityToEvent(localEditedEvent) {
     var eventEntryInFirebase = this.getEventByName(localEditedEvent.$key);
