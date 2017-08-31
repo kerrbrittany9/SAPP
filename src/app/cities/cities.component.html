@@ -37,7 +37,11 @@
     <br>
     <label for="city-notes">Useful information? Write down some notes to save for later.</label><br>
     <textarea #newCityNotes></textarea>
+    <label for="city-name">What city is this for?</label>
+    <input #newCity>
     <br>
-    <button (click)="saveCityNotes(newCityNotes.value)">Save notes</button>
+    <button (click)="saveCityNotes(newCityNotes.value, newCity.value)">Save notes</button>
   </div>
 </div>
+
+<app-saved-cities></app-saved-cities>

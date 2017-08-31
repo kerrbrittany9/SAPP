@@ -18,4 +18,13 @@ export class TriviaService {
     return this.trivia;
   }
 
+  getTriviaById(id: string) {
+    return this.af.object('/trivia/' + id);
+  }
+
+  deleteTrivia(localTriviaToDelete){
+    let foundTrivia = this.getTriviaById(localTriviaToDelete.$key);
+    foundTrivia.remove();
+  }
+
 }

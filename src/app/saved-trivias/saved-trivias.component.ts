@@ -27,14 +27,11 @@ export class SavedTriviasComponent implements OnInit {
   sendTriviaToEvent(event: Event, trivia: Trivia) {
     event.conversations.push(trivia.id);
     this.eventService.saveTriviaToEvent(event);
-    // this.eventService.getEvents().subscribe(dataLastEmittedFromObserver => {
-    //   this.eventList = dataLastEmittedFromObserver;
-    //   this.eventList.forEach(function(currentEvent) {
-    //     var convoArr: any[] = currentEvent.conversations;
-    //     convoArr.push(trivia.id);
-    //     this.eventService.addTrivia(trivia.id);
-    //   });
-    // });
   }
 
+  beginDeletingTrivia(triviaToDelete){
+    if(confirm("Are you sure you want to delete this trivia?")){
+      this.triviaService.deleteTrivia(triviaToDelete);
+    }
+  }
 }

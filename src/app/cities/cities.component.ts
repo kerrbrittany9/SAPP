@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { CitiesApiService } from '../cities-api.service';
 import { CityConversation } from '../city-conversation.model';
+import { CitiesService } from '../cities.service';
 
 @Component({
   selector: 'app-cities',
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.css'],
-  providers: [ CitiesApiService ]
+  providers: [ CitiesApiService, CitiesService ]
 })
 export class CitiesComponent implements OnInit {
   selection: string = null;
@@ -15,10 +16,10 @@ export class CitiesComponent implements OnInit {
   searchDone: boolean = false;
   cityNotes: any[] = null;
 
-  constructor(private cityService: CitiesApiService) { }
+  constructor(private cityApiService: CitiesApiService, private citiesService: CitiesService) { }
 
   getCityInfo(city: string) {
-    this.cityService.getCityStats(city).subscribe(response => {
+    this.cityApiService.getCityStats(city).subscribe(response => {
       this.stats = response.json().categories;
       if (city == "cape-town") {
         this.selection = "Cape Town";
@@ -39,12 +40,9 @@ export class CitiesComponent implements OnInit {
     this.searchDone = true;
   }
 
-  saveCityNotes(cityNotes: string) {
-    console.log(cityNotes);
-    alert("Your notes have been saved!");
+  saveCityNotes(comments: string, city: string, id: string) {
     this.searchDone = false;
-    var newCityConversation: CityConversation = new CityConversation(cityNotes);
-    this.cityService.saveCityConversation(newCityConversation);
+    this.cityApiService.beginSaveCityConvo(comments, city, id);
   }
 
   ngOnInit() {

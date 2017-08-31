@@ -1,20 +1,20 @@
-<h3>Please choose a conversation starter topic</h3>
-
-<form>
-  <div class="form-group">
-    <label for="category">Category</label>
-    <select #triviaCategory>
-      <option value="26">Celebrity</option>
-      <option value="11">Film</option>
-      <option value="14">Television</option>
-      <option value="12">Music</option>
-      <option value="25">Art</option>
-      <option value="30">Gadgets</option>
-      <option value="21">Sports</option>
-    </select>
-  </div>
-  <button (click)="getTrivia(triviaCategory.value)">Get conversations</button>
-</form>
+<div class='container'><h3>Please choose a conversation starter topic</h3>
+  <form>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select #triviaCategory>
+        <option value="26">Celebrity</option>
+        <option value="11">Film</option>
+        <option value="14">Television</option>
+        <option value="12">Music</option>
+        <option value="25">Art</option>
+        <option value="30">Gadgets</option>
+        <option value="21">Sports</option>
+      </select>
+    </div>
+    <button (click)="getTrivia(triviaCategory.value)">Get conversations</button>
+  </form>
+</div>
 
 <div *ngIf="trivia">
   <app-trivia-list [childCategory]="choice" [childTrivia]="trivia"></app-trivia-list>

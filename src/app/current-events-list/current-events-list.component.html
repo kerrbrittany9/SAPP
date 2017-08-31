@@ -1,14 +1,16 @@
-  <div *ngFor="let article of childArticles">
-    <div class="well" id='article'>
-    <h2 (click)='showArticle=!showArticle'>{{article.title}}</h2>
-    <h4>{{article.author}}</h4>
-    <p>{{article.publishedAt}}</p>
-    <br>
-    <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage' (click)='showArticle=!showArticle'/>
-    <br>
-    <button (click)="saveCurrentEvent(article.title, article.description)">Save Current Event</button>
-    <div *ngIf='showArticle'>
-      <p>{{article.description}}</p>
+<div class='container'>
+  <div *ngFor="let article of childArticles; let i=index">
+    <div class="well" id='article' *ngIf='i<9'>
+      <h2 (click)='showArticle=!showArticle'>{{article.title}}</h2>
+      <h4>{{article.author}}</h4>
+      <p>{{article.publishedAt}}</p>
+      <br>
+      <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage' (click)='showArticle=!showArticle'/>
+      <br>
+      <button (click)="saveCurrentEvent(article.title, article.description)">Save Current Event</button>
+      <div *ngIf='showArticle'>
+        <p>{{article.description}}</p>
+      </div>
     </div>
   </div>
 </div>

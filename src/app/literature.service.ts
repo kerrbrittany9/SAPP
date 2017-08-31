@@ -20,8 +20,12 @@ export class LiteratureService {
     return this.bookConversations;
   }
 
-  // getLiteratureData(stringToCall: string) {
-  //   console.log(stringToCall);
-  //   return this.http.get(stringToCall);
-  // }
+  getBookById(id: string) {
+    return this.af.object('/bookConversations/' + id);
+  }
+
+  deleteBook(localBookToDelete){
+    let foundBook = this.getBookById(localBookToDelete.$key);
+    foundBook.remove();
+  }
 }
