@@ -28,4 +28,10 @@ export class SavedCurrentEventsComponent implements OnInit {
     this.eventService.saveCurrentEventToEvent(event);
     alert("Current event has been saved to " + event.name + "!");
   }
+
+  beginDeletingCurrentEvent(currentEventToDelete) {
+    if(confirm("Are you sure you want to delete this current event?")) {
+      this.currentEventsService.deleteCurrentEvent(currentEventToDelete);
+    }
+  }
 }

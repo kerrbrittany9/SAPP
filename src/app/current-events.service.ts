@@ -22,7 +22,12 @@ currentEvent: FirebaseListObservable<any[]>;
     return this.currentEvent;
   }
 
-  // getCurrentEvents() {
-  //   return this.currentEvent;
-  // }
+  getCurrentEventById(id: string) {
+    return this.af.object('/currentEvents/' + id);
+  }
+
+  deleteCurrentEvent(localCurrentEventToDelete) {
+    let foundCurrentEvent = this.getCurrentEventById(localCurrentEventToDelete.$key);
+    foundCurrentEvent.remove();
+  }
 }
