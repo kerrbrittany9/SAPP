@@ -29,4 +29,10 @@ export class SavedBooksComponent implements OnInit {
     event.conversations.push(book.id);
     this.eventService.saveBookToEvent(event);
   }
+
+  beginDeletingBook(bookToDelete){
+    if(confirm("Are you sure you want to delete this book?")){
+      this.literatureService.deleteBook(bookToDelete);
+    }
+  }
 }
