@@ -51,8 +51,14 @@ export class TriviaFormComponent implements OnInit {
         // console.log(currentTrivia.question.includes("&#039;"));
         // console.log(currentTrivia.question.includes("&quot;"));
         // console.log(currentTrivia);
+        if (currentTrivia.question.includes("&amp;") === true) {
+          currentTrivia.question = currentTrivia.question.replace(/&amp;/g, "&");
+        }
         if (currentTrivia.question.includes("&uuml;") === true) {
           currentTrivia.question = currentTrivia.question.replace(/&uuml;/g, "ü");
+        }
+        if (currentTrivia.question.includes("&Uuml;") === true) {
+          currentTrivia.question = currentTrivia.question.replace(/&Uuml;/g, "Ü");
         }
         if (currentTrivia.question.includes("&deg;") === true) {
           currentTrivia.question = currentTrivia.question.replace(/&deg;/g, "°");
@@ -66,12 +72,6 @@ export class TriviaFormComponent implements OnInit {
         if (currentTrivia.question.includes("&#039;") === true) {
           currentTrivia.question = currentTrivia.question.replace(/&#039;/g, "'");
         }
-        if (currentTrivia.correct_answer.includes("&#039;") === true) {
-          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&#039;/g, "'");
-        }
-        if (currentTrivia.correct_answer.includes("&uuml;") === true) {
-          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&uuml;/g, "ü");
-        }
         if (currentTrivia.question.includes("&quot;") === true) {
           currentTrivia.question = currentTrivia.question.replace(/&quot;/g, "'");
         }
@@ -81,29 +81,82 @@ export class TriviaFormComponent implements OnInit {
         if (currentTrivia.question.includes("&rsquo;") === true) {
           currentTrivia.question = currentTrivia.question.replace(/&rsquo;/g, "'");
         }
+        if (currentTrivia.correct_answer.includes("&#039;") === true) {
+          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&#039;/g, "'");
+        }
+        if (currentTrivia.correct_answer.includes("&quot;") === true) {
+          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&#quot;/g, '"');
+        }
+        if (currentTrivia.correct_answer.includes("&eacute;") === true) {
+          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&eacute;/g, "é");
+        }
+        if (currentTrivia.correct_answer.includes("&uuml;") === true) {
+          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&uuml;/g, "ü");
+        }
+        if (currentTrivia.correct_answer.includes("&prime;") === true) {
+          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&prime;/g, "'");
+        }
+        if (currentTrivia.correct_answer.includes("&Prime;") === true) {
+          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&Prime;/g, '"');
+        }
+        if (currentTrivia.correct_answer.includes("&aring;") === true) {
+          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&aring;/g, 'å');
+        }
+        if (currentTrivia.correct_answer.includes("&ouml;") === true) {
+          currentTrivia.correct_answer = currentTrivia.correct_answer.replace(/&ouml;/g, 'ö');
+        }
+
+        var wrong_answers = [];
         currentTrivia.incorrect_answers.forEach(function(incorrectAnswer) {
-          console.log(incorrectAnswer.includes("&eacute;"));
+          console.log(incorrectAnswer + " contains &eacute; = " + incorrectAnswer.includes("&eacute;"));
+          if (incorrectAnswer.includes("&amp;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&amp;/g, "&");
+          }
           if (incorrectAnswer.includes("&prime;") === true) {
-            incorrectAnswer.replace(/&prime;/g, "'");
+            incorrectAnswer = incorrectAnswer.replace(/&prime;/g, "'");
           }
           if (incorrectAnswer.includes("&Prime;") === true) {
-            incorrectAnswer.replace(/&Prime;/g, '"');
+            incorrectAnswer = incorrectAnswer.replace(/&Prime;/g, '"');
           }
           if (incorrectAnswer.includes("&#039;") === true) {
-            incorrectAnswer.replace(/&#039;/g, "'");
+            incorrectAnswer = incorrectAnswer.replace(/&#039;/g, "'");
           }
           if (incorrectAnswer.includes("&quot;") === true) {
-            incorrectAnswer.replace(/&quot;/g, '"');
+            incorrectAnswer = incorrectAnswer.replace(/&quot;/g, '"');
+          }
+          if (incorrectAnswer.includes("&ldquo;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&ldquo;/g, '"');
+          }
+          if (incorrectAnswer.includes("&rdquo;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&rdquo;/g, '"');
+          }
+          if (incorrectAnswer.includes("&hellip;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&hellip;/g, '...');
           }
           if (incorrectAnswer.includes("&eacute;") === true) {
-            console.log("é");
-            incorrectAnswer.replace(/&eacute;/g, 'E');
+            incorrectAnswer = incorrectAnswer.replace(/&eacute;/g, 'é');
           }
           if (incorrectAnswer.includes("&ocirc;") === true) {
-            incorrectAnswer.replace(/&ocirc;/g, 'ô');
+            incorrectAnswer = incorrectAnswer.replace(/&ocirc;/g, 'ô');
           }
-
+          if (incorrectAnswer.includes("&scaron;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&scaron;/g, 'š');
+          }
+          if (incorrectAnswer.includes("&aring;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&aring;/g, 'å');
+          }
+          if (incorrectAnswer.includes("&auml;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&auml;/g, 'ä');
+          }
+          if (incorrectAnswer.includes("&euml;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&euml;/g, 'ë');
+          }
+          if (incorrectAnswer.includes("&Uuml;") === true) {
+            incorrectAnswer = incorrectAnswer.replace(/&Uuml;/g, 'Ü');
+          }
+          wrong_answers.push(incorrectAnswer);
         })
+        currentTrivia.incorrect_answers = wrong_answers;
         triviaToDisplay.push(currentTrivia);
       });
       console.log(triviaToDisplay[0]);
