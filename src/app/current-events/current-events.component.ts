@@ -16,12 +16,15 @@ export class CurrentEventsComponent implements OnInit {
   ngOnInit() {
   }
     articles: any[];
+    sourceChoice = null;
 
     constructor(private currentEventsService: CurrentEventsService, private currentEventApiService: CurrentEventApiService) { }
 
     getNews(source: string){
-    this.currentEventApiService.getBySource(source).subscribe(response => {this.articles = response.json().articles;
-      console.log(this.articles);
+      this.sourceChoice = source;
+      console.log(this.currentEventApiService);
+      this.currentEventApiService.getBySource(source).subscribe(response => {this.articles = response.json().articles;
+        // console.log(source);
     });
   }
 

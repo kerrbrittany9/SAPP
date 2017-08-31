@@ -9,9 +9,12 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class CurrentEventsService {
 currentEvent: FirebaseListObservable<any[]>;
 
-  constructor(private af: AngularFireDatabase) { }
+  constructor(private af: AngularFireDatabase) {
+    this.currentEvent = af.list('currentEvents');
+  }
 
   addCurrentEvent(newCurrentEvent: CurrentEvent) {
+    console.log(newCurrentEvent);
     this.currentEvent.push(newCurrentEvent);
   }
 

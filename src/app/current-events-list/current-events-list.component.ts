@@ -13,13 +13,17 @@ import { CurrentEventApiService } from '../current-event-api.service';
 })
 export class CurrentEventsListComponent {
 @Input() childArticles;
+@Input() childSource;
+
 showArticle = false;
 
   constructor(private currentEventsService: CurrentEventsService, private currentEventApiService: CurrentEventApiService) { }
 
-  saveCurrentEvent(title, description, id) {
-    this.currentEventApiService.saveCurrentEventObject(title, description, id);
-    alert("this article has been saved!")
+  saveCurrentEvent(title: string, description: string) {
+    console.log(this.currentEventApiService);
+    console.log(this.childSource);
+    this.currentEventApiService.saveCurrentEventObject(title, description, this.childSource);
+
   }
 
 }
