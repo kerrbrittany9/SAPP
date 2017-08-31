@@ -1,17 +1,19 @@
-<div *ngFor="let trivia of trivias | async">
-  <div class="well">
-    <h4>{{trivia.question}}</h4>
-    <h5>{{trivia.correctAnswer}}</h5>
-
+<div class='container'>
+  <div *ngFor="let trivia of trivias | async">
     <div class="well">
-      Save Trivia to Specific Event:
-      <!-- <div *ngFor="let event of events | async">
-      </div> -->
-      <select [(ngModel)]="selectedEvent">
-        <option *ngFor="let event of events | async" [ngValue]="event">{{event.name}}</option>
-      </select>
-      <button (click)="sendTriviaToEvent(selectedEvent, trivia)">Save to this event</button>
+      <h4>{{trivia.question}}</h4>
+      <h5>{{trivia.correctAnswer}}</h5>
+
+      <div class="well">
+        Save Trivia to Specific Event:
+        <!-- <div *ngFor="let event of events | async">
+        </div> -->
+        <select [(ngModel)]="selectedEvent">
+          <option *ngFor="let event of events | async" [ngValue]="event">{{event.name}}</option>
+        </select>
+        <button (click)="sendTriviaToEvent(selectedEvent, trivia)">Save to this event</button>
+      </div>
+      <button (click)='beginDeletingTrivia(trivia)'>Delete Trivia</button>
     </div>
-    <button (click)='beginDeletingTrivia(trivia)'>Delete Trivia</button>
   </div>
 </div>
