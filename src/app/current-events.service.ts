@@ -9,7 +9,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class CurrentEventsService {
 currentEvent: FirebaseListObservable<any[]>;
 
-  constructor(private af: AngularFireDatabase) {
+  constructor(private http: Http, private af: AngularFireDatabase) {
     this.currentEvent = af.list('currentEvents');
   }
 
@@ -18,7 +18,7 @@ currentEvent: FirebaseListObservable<any[]>;
     this.currentEvent.push(newCurrentEvent);
   }
 
-  getCurrentEvents(source) {
+  getCurrentEvents() {
     return this.currentEvent;
   }
 
