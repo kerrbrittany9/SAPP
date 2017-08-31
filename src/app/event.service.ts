@@ -18,6 +18,10 @@ export class EventService {
     return this.events;
   }
 
+  // checkForEventConvos(event) {
+  //   event.conversations = event.conversations !== undefined ? event.conversations : [];
+  // }
+
 
   addEvent(newEvent: Event) {
     this.events.push(newEvent);
@@ -29,6 +33,7 @@ export class EventService {
 
   saveTriviaToEvent(localEditedEvent) {
     var eventEntryInFirebase = this.getEventByName(localEditedEvent.$key);
+    // this.checkForEventConvos(eventEntryInFirebase);
     eventEntryInFirebase.update({
       name: localEditedEvent.name,
       date: localEditedEvent.date,

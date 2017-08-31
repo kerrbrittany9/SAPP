@@ -19,16 +19,16 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
     var eventsToDisplayMaster: any[] = [];
     this.events = this.eventService.getEvents();
-    this.events.forEach(function(events) {
-      console.log(events);
-      var eventsToDisplay: any[] = [];
-      events.forEach(function(event) {
-        event.conversations.shift();
-        eventsToDisplay.push(event);
-      });
-      eventsToDisplayMaster = eventsToDisplay;
-    });
-    this.eventList = eventsToDisplayMaster;
+    // this.events.forEach(function(events) {
+    //   console.log(events);
+    //   var eventsToDisplay: any[] = [];
+    //   events.forEach(function(event) {
+    //     event.conversations.shift();
+    //     eventsToDisplay.push(event);
+    //   });
+    //   eventsToDisplayMaster = eventsToDisplay;
+    // });
+    // this.eventList = eventsToDisplayMaster;
   }
 
   showAddEventForm() {
