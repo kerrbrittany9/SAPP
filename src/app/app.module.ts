@@ -23,7 +23,8 @@ import { CurrentEventsListComponent } from './current-events-list/current-events
 import { SavedBooksComponent } from './saved-books/saved-books.component';
 import { CitiesComponent } from './cities/cities.component';
 import { SavedCurrentEventsComponent } from './saved-current-events/saved-current-events.component';
-import { SavedCitiesComponent } from './saved-cities/saved-cities.component';
+import { About } from './about/about.component';
+
 
 
 export const googleBooksConfig = {
@@ -57,7 +58,7 @@ export const firebaseConfig = {
     SavedBooksComponent,
     CitiesComponent,
     SavedCurrentEventsComponent,
-    SavedCitiesComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,

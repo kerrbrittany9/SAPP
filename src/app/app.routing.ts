@@ -6,7 +6,7 @@ import { LiteratureComponent } from './literature/literature.component';
 import { CurrentEventsComponent } from './current-events/current-events.component';
 import { EventsComponent } from  './events/events.component';
 import { CitiesComponent } from './cities/cities.component';
-
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +32,10 @@ const appRoutes: Routes = [
   {
     path: 'cities',
     component: CitiesComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   }
 ];
 
