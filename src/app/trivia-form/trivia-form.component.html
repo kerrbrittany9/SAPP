@@ -1,4 +1,5 @@
-<div class='container'><h3>Please choose a conversation starter topic</h3>
+<div class="container-fluid">
+  <h3>Please choose a conversation starter topic</h3>
   <form>
     <div class="form-group">
       <label for="category">Category</label>
@@ -16,8 +17,8 @@
   </form>
 </div>
 
-<div *ngIf="trivia">
-  <app-trivia-list [childCategory]="choice" [childTrivia]="trivia"></app-trivia-list>
+<div *ngIf="triviaGotten === true">
+  <app-trivia-list [childChoice]="choice" [childCategory]="category" [childTriviaList]="triviaList"></app-trivia-list>
 </div>
 <br>
 <app-saved-trivias></app-saved-trivias>

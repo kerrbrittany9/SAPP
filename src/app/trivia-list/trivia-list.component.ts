@@ -11,8 +11,10 @@ import { EventService } from '../event.service';
   providers: [ TriviaApiService, TriviaService, EventService ]
 })
 export class TriviaListComponent implements OnInit {
-  @Input() childTrivia;
+  @Input() childChoice;
   @Input() childCategory;
+  @Input() childTriviaList;
+
   constructor(private triviaAnswers: TriviaApiService, private trivia: TriviaService, private eventService: EventService) { }
 
   saveTrivia(question, incorrect, correct, category, id) {
@@ -21,7 +23,6 @@ export class TriviaListComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.eventService.checkForEventConvos();
   }
 
 }

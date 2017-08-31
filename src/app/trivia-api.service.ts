@@ -9,8 +9,8 @@ export class TriviaApiService {
 
   constructor(private http: Http, private triviaService: TriviaService) { }
 
-  getTriviaResults(category: number) {
-    return this.http.get("https://opentdb.com/api.php?amount=1&category=" + category)
+  getTriviaResults(category) {
+    return this.http.get("https://opentdb.com/api.php?amount=1&category=" + category);
   }
 
   saveTriviaObject(question: string, incorrect: string, correct: string, category: string, id: string) {
