@@ -1,6 +1,6 @@
 <div class="container">
-  <h2>Step 1: Statement 'I was reading about {{childCategory}} and found this fun fact:''</h2>
-  <div *ngFor="let trivia of childTrivia.results;">
+  <h2>Step 1: Statement 'I was reading about {{childChoice}} and found this fun fact:''</h2>
+  <div *ngFor="let trivia of childTriviaList;">
     <h3><em>{{trivia.question}}</em></h3>
     <ul *ngFor="let incorrect of trivia.incorrect_answers">
       <li>{{incorrect}}?</li>
