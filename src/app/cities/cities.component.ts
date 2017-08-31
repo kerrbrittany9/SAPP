@@ -41,11 +41,8 @@ export class CitiesComponent implements OnInit {
   }
 
   saveCityNotes(comments: string, city: string, id: string) {
-    // console.log(cityNotes);
-    // alert("Your notes have been saved!");
     this.searchDone = false;
     this.cityApiService.beginSaveCityConvo(comments, city, id);
-    // alert("This city comment has been saved!");
   }
 
   ngOnInit() {
