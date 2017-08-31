@@ -20,4 +20,13 @@ export class CitiesService {
     return this.cityConversations;
   }
 
+  getCityById(id: string) {
+    return this.af.object('/cityConversations/' + id);
+  }
+
+  deleteComment(localCommentToDelete){
+    let foundCity = this.getCityById(localCommentToDelete.$key);
+    foundCity.remove();
+  }
+
 }

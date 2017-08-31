@@ -7,7 +7,7 @@
       <h4>-on {{city.city}}</h4>
 
       <div class="well">
-        Save City to Specific Event:
+        Save Comment to Specific Event:
         <!-- <div *ngFor="let event of events | async">
         </div> -->
         <select [(ngModel)]="selectedEvent">
@@ -15,6 +15,7 @@
         </select>
         <button (click)="sendCityToEvent(selectedEvent, city)">Save to this event</button>
       </div>
+      <button (click)='beginDeletingComment(city)'>Delete Comment</button>
     </div>
   </div>
 </div>

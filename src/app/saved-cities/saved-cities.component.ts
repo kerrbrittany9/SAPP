@@ -30,4 +30,10 @@ export class SavedCitiesComponent implements OnInit {
     this.eventService.saveCityToEvent(event);
   }
 
+  beginDeletingComment(commentToDelete){
+    if(confirm("Are you sure you want to delete this comment?")){
+      this.citiesService.deleteComment(commentToDelete);
+    }
+  }
+
 }
