@@ -22,5 +22,7 @@
 </div>
 
 <div *ngIf='articles'>
-  <app-current-events-list [childArticles]='articles'></app-current-events-list>
+  <app-current-events-list [childArticles]='articles' [childSource]='sourceChoice'></app-current-events-list>
 </div>
+<br>
+<app-saved-current-events></app-saved-current-events>

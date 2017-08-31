@@ -1,0 +1,17 @@
+<div *ngFor="let currentEvent of currentEvents | async">
+  <div class="well">
+    <h4>{{currentEvent.title}}</h4>
+    <h5>{{currentEvent.description}}</h5>
+
+    <div class="well">
+      Save Current Event to Specific Calendar Event:
+      <!-- <div *ngFor="let event of events | async">
+      </div> -->
+      <select [(ngModel)]="selectedEvent">
+        <option *ngFor="let event of events | async" [ngValue]="event">{{event.name}}</option>
+      </select>
+      <button (click)="sendCurrentEventToEvent(selectedEvent, currentEvent)">Save to this Calendar Event</button>
+    </div>
+    <button (click)="beginDeletingCurrentEvent(currentEvent)">Delete Current Event</button>
+  </div>
+</div>
