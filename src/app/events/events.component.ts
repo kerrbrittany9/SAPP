@@ -12,11 +12,23 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class EventsComponent implements OnInit {
   events: FirebaseListObservable<any[]>;
   addingNewEvent: boolean = false;
+  eventList;
 
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
+    var eventsToDisplayMaster: any[] = [];
     this.events = this.eventService.getEvents();
+    // this.events.forEach(function(events) {
+    //   console.log(events);
+    //   var eventsToDisplay: any[] = [];
+    //   events.forEach(function(event) {
+    //     event.conversations.shift();
+    //     eventsToDisplay.push(event);
+    //   });
+    //   eventsToDisplayMaster = eventsToDisplay;
+    // });
+    // this.eventList = eventsToDisplayMaster;
   }
 
   showAddEventForm() {

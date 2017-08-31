@@ -1,7 +1,3 @@
-<div *ngFor="let event of events | async">
-  {{event.name}}
-</div>
-
 <div *ngIf="addingNewEvent === false">
   <button (click)="showAddEventForm()">Add New Event</button>
 </div>
@@ -12,4 +8,16 @@
     <input #newAttendees placeholder="Event Attendees">
   </div>
   <button (click)="beginAddingNewEvent(newName.value, newDate.value, newAttendees.value)">Save Event</button>
+</div>
+
+<div *ngFor="let event of events | async" class="well">
+  <ul class="list-unstyled">
+    <h3>{{event.name}}</h3>
+    <li>When: {{event.date}}</li>
+    <li>Attendees: {{event.attendees}}</li>
+    <p>Saved Conversation Starters:</p>
+    <ul>
+      <li *ngFor="let convo of event.conversations">{{convo}}</li>
+    </ul>
+  </ul>
 </div>

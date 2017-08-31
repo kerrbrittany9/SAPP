@@ -9,7 +9,6 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class EventService {
   events: FirebaseListObservable<any[]>;
   eventName: string;
-  eventToUse: Event;
 
   constructor(private af: AngularFireDatabase) {
     this.events = af.list('events');
@@ -18,6 +17,11 @@ export class EventService {
   getEvents() {
     return this.events;
   }
+
+  // checkForEventConvos(event) {
+  //   event.conversations = event.conversations !== undefined ? event.conversations : [];
+  // }
+
 
   addEvent(newEvent: Event) {
     this.events.push(newEvent);
@@ -29,6 +33,7 @@ export class EventService {
 
   saveTriviaToEvent(localEditedEvent) {
     var eventEntryInFirebase = this.getEventByName(localEditedEvent.$key);
+    // this.checkForEventConvos(eventEntryInFirebase);
     eventEntryInFirebase.update({
       name: localEditedEvent.name,
       date: localEditedEvent.date,

@@ -2,18 +2,19 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TriviaApiService } from '../trivia-api.service';
 import { TriviaService } from '../trivia.service';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-trivia-form',
   templateUrl: './trivia-form.component.html',
   styleUrls: ['./trivia-form.component.css'],
-  providers: [ TriviaApiService, TriviaService ]
+  providers: [ TriviaApiService, TriviaService, EventService ]
 })
 export class TriviaFormComponent implements OnInit {
   trivia: any[];
   choice = null;
 
-  constructor(private triviaAnswers: TriviaApiService, private triviaS: TriviaService) { }
+  constructor(private triviaAnswers: TriviaApiService, private triviaS: TriviaService, private eventService: EventService) { }
 
   getTrivia(category: number) {
     this.triviaAnswers.getTriviaResults(category).subscribe(response => {
@@ -37,7 +38,7 @@ export class TriviaFormComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // this.eventService.checkForEventConvos();
   }
 
 }
