@@ -10,7 +10,7 @@
   <button (click)="beginAddingNewEvent(newName.value, newDate.value, newAttendees.value)">Save Event</button>
 </div>
 
-<div *ngFor="let event of events | async" class="well">
+<div *ngFor="let event of eventList" class="well">
   <ul class="list-unstyled">
     <h3>{{event.name}}</h3>
     <li>When: {{event.date}}</li>
