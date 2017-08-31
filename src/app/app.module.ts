@@ -54,7 +54,7 @@ export const firebaseConfig = {
     CurrentEventsComponent,
     CurrentEventsListComponent,
     SavedBooksComponent,
-    CitiesComponent
+    CitiesComponent,
     SavedCurrentEventsComponent
   ],
   imports: [
