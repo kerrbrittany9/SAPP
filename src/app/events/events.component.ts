@@ -17,6 +17,12 @@ export class EventsComponent implements OnInit {
 
   ngOnInit() {
     this.events = this.eventService.getEvents();
+    // this.events.forEach(function(events) {
+    //   console.log(events);
+    //   events.forEach(function(event) {
+    //     event.conversations.shift();
+    //   });
+    // });
   }
 
   showAddEventForm() {

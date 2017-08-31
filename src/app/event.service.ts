@@ -9,7 +9,6 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class EventService {
   events: FirebaseListObservable<any[]>;
   eventName: string;
-  eventToUse: Event;
 
   constructor(private af: AngularFireDatabase) {
     this.events = af.list('events');
@@ -18,6 +17,7 @@ export class EventService {
   getEvents() {
     return this.events;
   }
+
 
   addEvent(newEvent: Event) {
     this.events.push(newEvent);
