@@ -3,21 +3,18 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" routerLink="">Home</a>
-      <h1>
-        {{title}}
-      </h1>
+      <a class="navbar brand text-muted" routerLink="">{{title}}</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li *ngIf="isLoggedIn">
-        <!-- if the user is logged in, we’ll show that user’s name along with an event binding to logout. -->
+      <!-- <li *ngIf="isLoggedIn">
+        if the user is logged in, we’ll show that user’s name along with an event binding to logout.
         <a>{{userName}}</a>
         <a (click)="logout()">Log out</a>
       </li>
       <li *ngIf ="!isLoggedIn">
-        <!-- if the user isn’t logged in, we’ll have an event binding to login. -->
+        if the user isn’t logged in, we’ll have an event binding to login.
         <a (click)="login()">Log in</a>
-      </li>
+      </li> -->
       <li><a routerLink="literature">Literature</a></li>
       <li><a routerLink="trivia">Trivia</a></li>
       <li><a routerLink="current-events">Current Events</a></li>
