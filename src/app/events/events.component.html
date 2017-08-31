@@ -16,7 +16,7 @@
     <li>When: {{event.date}}</li>
     <li>Attendees: {{event.attendees}}</li>
     <p>Saved Conversation Starters:</p>
-    <ul>
+    <ul class="list-unstyled" id="convo-list">
       <li *ngFor="let convo of event.conversations">{{convo}}</li>
     </ul>
   </ul>
