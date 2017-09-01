@@ -1,15 +1,36 @@
 <div class='container'>
   <div *ngFor="let article of childArticles; let i=index">
     <div class="well" id='article' *ngIf='i<9'>
-      <h2 (click)='showArticle=!showArticle'>{{article.title}}</h2>
+      <div id='teaser'>
+        <h2 id='headline'>{{article.title}}</h2>
+        <h4 id='author'>{{article.author}}</h4>
+        <p>{{article.publishedAt}}</p>
+        <br>
+        <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage'/>
+        <br>
+        <div *ngIf='showArticle'>
+          <p id='description'>{{article.description}}</p>
+        </div>
+        <button (click)="saveCurrentEvent(article.title, article.description)" class='saveArticle'>Save Current Event</button>
+        <button type="button" data-toggle="modal" data-target="#singleArticle">Show Article</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id='singleArticle' role='document'>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <h2>{{article.title}}</h2>
       <h4>{{article.author}}</h4>
       <p>{{article.publishedAt}}</p>
       <br>
-      <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage' (click)='showArticle=!showArticle'/>
-      <br>
-      <button (click)="saveCurrentEvent(article.title, article.description)">Save Current Event</button>
-      <div *ngIf='showArticle'>
-        <p>{{article.description}}</p>
+      <img src="{{article.urlToImage}}" alt="Image of Book Cover">
+      <div class="modal-footer">
+        <button type="button" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

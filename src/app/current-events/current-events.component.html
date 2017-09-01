@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="well">
+  <div class="well" id='pickSource'>
     <h2>Current Events</h2>
       <label>Choose a news source:</label>
       <select #newsSource>
@@ -25,4 +25,4 @@
   <app-current-events-list [childArticles]='articles' [childSource]='sourceChoice'></app-current-events-list>
 </div>
 <br>
-<app-saved-current-events id='saveBox'></app-saved-current-events>
+<app-saved-current-events></app-saved-current-events>

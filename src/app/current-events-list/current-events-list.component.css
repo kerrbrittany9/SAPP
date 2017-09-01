@@ -1,16 +1,11 @@
-#newsImage {
-  width: 95%;
-  display: block;
-  margin: auto;
-  bottom: 2%;
-}
-
 #article {
   width: 30%;
+  padding-top: 5px;
   float: left;
-  height: 500px;
+  height:  550px;
   margin-left: 5px;
   margin-right: 5px;
+  position: relative;
 }
 
 .byline {
@@ -19,4 +14,30 @@
 
 #articleDetails {
   overflow: hidden;
+}
+
+#newsImage {
+  width: 95%;
+  max-height: 250px;
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+}
+
+.saveArticle {
+  position: absolute;
+  bottom: 2%;
+  overflow: visible;
+}
+
+#description {
+  margin-bottom: 10px;
+}
+
+#headline:hover {
+  text-decoration: underline;
+  cursor: default;
+}
+#author {
+  font-size: 95%;
 }
