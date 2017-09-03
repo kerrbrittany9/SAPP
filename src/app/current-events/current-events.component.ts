@@ -24,7 +24,7 @@ export class CurrentEventsComponent implements OnInit {
       this.sourceChoice = source;
       console.log(this.currentEventApiService);
       this.currentEventApiService.getBySource(source).subscribe(response => {this.articles = response.json().articles;
-        // console.log(source);
+        console.log(this.articles);
     });
   }
 

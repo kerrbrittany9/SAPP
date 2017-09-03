@@ -25,7 +25,6 @@ import { CitiesComponent } from './cities/cities.component';
 import { SavedCurrentEventsComponent } from './saved-current-events/saved-current-events.component';
 import { SavedCitiesComponent } from './saved-cities/saved-cities.component';
 
-
 export const googleBooksConfig = {
   apiKey: masterGoogleBooksConfig.apiKey,
 }
