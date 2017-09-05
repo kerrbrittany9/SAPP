@@ -46,6 +46,30 @@ export class EventService {
     return this.af.object('events/' + eventName);
   }
 
+  getEventConvos(targetEvent) {
+    var convosArr = [];
+    var eventEntryInFirebase = this.getEventByName(targetEvent.$key);
+    eventEntryInFirebase.subscribe(event => {
+      event.conversations.forEach(convo => {
+        convosArr.push(convo);
+      });
+    })
+    return convosArr;
+  }
+
+  deleteConvoFromEvent(localTargetEvent, convoId) {
+    var eventEntryInFirebase = this.getEventByName(localTargetEvent.$key);
+    eventEntryInFirebase.subscribe(event => {
+      event.conversations.forEach(convo => {
+        if (convo === convoId) {
+          console.log("conditional in service method met!");
+          convo.remove();
+          //we need to mimic other module's methods for deletion (look at literatureService with getBOokById and deleteBook);
+        }
+      });
+    });
+  }
+
   saveTriviaToEvent(localEditedEvent) {
     var eventEntryInFirebase = this.getEventByName(localEditedEvent.$key);
     // this.checkForEventConvos(eventEntryInFirebase);
