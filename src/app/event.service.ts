@@ -85,5 +85,6 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
+    alert("Your city notes have been saved to " + localEditedEvent.name + "!");
   }
 }
