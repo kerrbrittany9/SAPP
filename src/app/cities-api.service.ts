@@ -27,6 +27,7 @@ export class CitiesApiService {
       // var splitComments = comments.split(" ");
       // var commentsId = splitComments.join("-");
       // var cityId = city.length;
+      // console.log(city);
       var id = city + ": " + comments;
       var newCityConvo = new CityConversation(comments, city, id);
       this.citiesService.addCityConvo(newCityConvo);
