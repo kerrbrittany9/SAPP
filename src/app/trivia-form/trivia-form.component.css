@@ -4,4 +4,14 @@
 
 .container {
   margin-top: 5%;
+  font-family: 'Arapey', serif;
+}
+
+.borderLine {
+  width: 125%;
+  padding-right: 25%;
+}
+
+#savedTrivies {
+  margin-left: 2%;
 }

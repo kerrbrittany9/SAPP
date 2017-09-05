@@ -1,0 +1,12 @@
+.container {
+    font-family: 'Arapey', serif;
+}
+
+.question {
+  background-color: rgba(44, 142, 105, .8);
+  background-image: url(../../assets/img/lookinup.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  /*text-shadow: 2px 2px black;*/
+}

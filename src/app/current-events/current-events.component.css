@@ -4,6 +4,7 @@ button {
 
 .container {
   margin-top: 5%;
+  font-family: 'Arapey', serif;
 }
 
 #pickSource {
@@ -14,4 +15,11 @@ button {
 }
 .well {
   background-color: white;
+}
+.borderLine {
+  width: 125%;
+  padding-right: 25%;
+}
+#savedNews {
+  margin-left: 2%;
 }

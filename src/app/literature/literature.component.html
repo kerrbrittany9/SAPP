@@ -1,17 +1,18 @@
 <div class="container">
 
-  <div class="well">
     <h2>Literature</h2>
     <div class="form-group">
       <label>Enter a literary keyword:</label>
       <input #newLitSearch>
     </div>
     <button (click)="beginLiteratureSearch(newLitSearch.value)">Search The Literary World</button>
-  </div>
+
 
   <div *ngIf="books">
     <app-literature-list [childBooks]="books"></app-literature-list>
   </div>
 <br>
+<img src='../../assets/img/borderLine.png' class='borderLine'>
+<h3 id='savedBooks'>Saved Book Conversation Starters</h3>
 <app-saved-books></app-saved-books>
 </div>

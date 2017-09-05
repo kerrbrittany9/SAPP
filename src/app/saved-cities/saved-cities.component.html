@@ -1,6 +1,7 @@
 <br><br>
 <div class="container">
-  <h2>Here are your saved notes on some cities:</h2>
+  <img src='../../assets/img/borderLine.png' class='borderLine'>
+  <h3 id='savedCities'>Saved City Conversation Starters</h3>
   <div *ngFor="let city of cities | async">
     <div class="well">
       <h3><em>"{{city.comments}}"</em></h3>

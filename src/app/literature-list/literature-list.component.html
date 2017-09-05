@@ -4,8 +4,8 @@
     <div class="row">
       <div class="col-md-4">
         <div class="book-info">
-          <h4>{{book.volumeInfo.title}}</h4> by
-          <span *ngFor="let author of book.volumeInfo.authors; let isLast=last">{{author}}{{isLast ? '' : ', '}}</span>
+          <h2><em>{{book.volumeInfo.title}}</em></h2> by
+          <h3><span *ngFor="let author of book.volumeInfo.authors; let isLast=last">{{author}}{{isLast ? '' : ', '}}</span></h3>
           <br>
           <br>
           <img src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="Image of Book Cover" />
@@ -15,11 +15,12 @@
         </div>
       </div>
       <div class="col-md-8">
-        <button (click)="saveBook(book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.imageLinks.smallThumbnail, newComments.value)">Save This Book Info</button>
         <div class="book-description">
           <p>{{book.volumeInfo.description}}</p>
           <br>
+          <br>
         </div>
+        <button (click)="saveBook(book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.imageLinks.smallThumbnail, newComments.value)" id='saveBook'>Save This Book Info</button>
       </div>
     </div>
   </div>

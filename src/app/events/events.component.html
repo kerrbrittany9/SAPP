@@ -2,6 +2,7 @@
   <div *ngIf="addingNewEvent === false">
     <button (click)="showAddEventForm()" id='newEventButton'>Add New Event</button>
   </div>
+  <br>
   <div *ngIf="addingNewEvent === true">
     <div class="form-group">
       <input #newName placeholder="Event Name">
@@ -10,7 +11,7 @@
     </div>
     <button (click)="beginAddingNewEvent(newName.value, newDate.value, newAttendees.value)">Save Event</button>
   </div>
-
+  <br>
   <div *ngFor="let event of events | async" class="well">
     <ul class="list-unstyled">
       <h3>{{event.name}}</h3>

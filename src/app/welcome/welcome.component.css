@@ -1,6 +1,19 @@
-.well {
-  background-image: url("../../assets/img/about_pic.jpg");
+#backPic {
+  background: linear-gradient( rgba(0, 0, 0, .3), rgba(0, 0, 0, .3) ), url("../../assets/img/about_pic.jpg");
   /*height: 1000px;*/
   background-size: cover;
   height: 900px;
+  margin-top: 10%;
 }
+
+#welcomeMessage {
+  background:  linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) );
+  color: white;
+  margin-top: 20%;
+  border: black;
+  font-family: 'Arapey', serif;
+}
+
+/*.list-unstyled {
+  font-size: 17px;
+}*/

@@ -25,7 +25,7 @@
       <option value="stockholm">Stockholm</option>
       <option value="vancouver">Vancouver, BC</option>
       <option value="zurich">Zurich</option>
-    </select>
+    </select><br>
     <button (click)="getCityInfo(city.value); city.value = '';">Get it!</button>
   </form>
 
@@ -42,6 +42,6 @@
     <br>
     <button (click)="saveCityNotes(newCityNotes.value, newCity.value)">Save notes</button>
   </div>
-</div>
 
-<app-saved-cities></app-saved-cities>
+  <app-saved-cities></app-saved-cities>
+</div>

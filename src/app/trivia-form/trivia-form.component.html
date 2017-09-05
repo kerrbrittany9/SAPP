@@ -1,8 +1,9 @@
 <div class="container">
-  <h3>Please choose a conversation starter topic</h3>
+  <h2>Trivia</h2>
+
   <form>
     <div class="form-group">
-      <label for="category">Category</label>
+      <label for="category">Choose a conversation starter topic</label>
       <select #triviaCategory>
         <option value="26">Celebrity</option>
         <option value="11">Film</option>
@@ -15,10 +16,12 @@
     </div>
     <button (click)="getTrivia(triviaCategory.value)">Get conversations</button>
   </form>
-</div>
 
-<div *ngIf="triviaGotten === true">
-  <app-trivia-list [childChoice]="choice" [childCategory]="category" [childTriviaList]="triviaList"></app-trivia-list>
+  <div *ngIf="triviaGotten === true">
+    <app-trivia-list [childChoice]="choice" [childCategory]="category" [childTriviaList]="triviaList"></app-trivia-list>
+  </div>
+  <br>
+  <img src='../../assets/img/borderLine.png' class='borderLine'>
+  <h3 id='savedTrivies'>Saved Trivia Conversation Starters</h3>
+  <app-saved-trivias></app-saved-trivias>
 </div>
-<br>
-<app-saved-trivias></app-saved-trivias>

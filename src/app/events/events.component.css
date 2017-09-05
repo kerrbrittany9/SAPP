@@ -5,7 +5,7 @@
 .well {
   width: 45%;
   float: left;
-  height: 400px;
+  height: 500px;
   margin-left: 5px;
   margin-right: 5px;
   background-color: white;
@@ -15,7 +15,11 @@
   margin-bottom: 20px;
   background-color: white;
   border: solid 1px grey;
+  /*display: block;*/
+  margin: auto;
 }
 .container {
   margin-top: 5%;
+  font-family: 'Arapey', serif;
+  font-size: 16px;
 }

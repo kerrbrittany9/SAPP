@@ -3,4 +3,12 @@
 }
 .container {
   margin-top: 5%;
+  font-family: 'Arapey', serif;
+}
+#myBooks {
+  width: 48%;
+  float: left;
+  height: 220px;
+  margin-right: 1%;
+  margin-left: 1%;
 }

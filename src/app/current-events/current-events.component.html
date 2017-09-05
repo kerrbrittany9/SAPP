@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="well" id='pickSource'>
+  <div  id='pickSource'>
     <h2>Current Events</h2>
       <label>Choose a news source:</label>
       <select #newsSource>
@@ -17,12 +17,14 @@
         <option value='the-wall-street-journal'>Wall Street Journal</option>
         <option value='usa-today'>USA Today</option>
       </select>
+      <br>
     <button (click)="getNews(newsSource.value)">Search The News World</button>
   </div>
+  <div *ngIf='articles'>
+    <app-current-events-list [childArticles]='articles' [childSource]='sourceChoice'></app-current-events-list>
+  </div>
+  <br>
+  <img src='../../assets/img/borderLine.png' class='borderLine'>
+  <h3 id='savedNews'>Saved News Conversation Starters</h3>
+  <app-saved-current-events></app-saved-current-events>
 </div>
-
-<div *ngIf='articles'>
-  <app-current-events-list [childArticles]='articles' [childSource]='sourceChoice'></app-current-events-list>
-</div>
-<br>
-<app-saved-current-events></app-saved-current-events>

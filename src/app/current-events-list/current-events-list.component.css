@@ -27,7 +27,7 @@
 .saveArticle {
   position: absolute;
   bottom: 2%;
-  left: 45%;
+  left: 50%;
 
 }
 
@@ -42,7 +42,12 @@
 #showArticle {
   position: absolute;
   bottom: 2%;
+  left: 12%;
 }
 .well {
   background-color: white;
+}
+
+.container {
+  font-family: 'Arapey', serif;
 }
