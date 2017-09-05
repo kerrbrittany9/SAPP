@@ -66,6 +66,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
+    alert("Your book info has been saved to " + localEditedEvent.name);
   }
 
   saveCurrentEventToEvent(localEditedEvent) {
@@ -76,6 +77,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
+    alert("Current event has been saved to " + localEditedEvent.name + "!");
   }
 
   saveCityToEvent(localEditedEvent) {

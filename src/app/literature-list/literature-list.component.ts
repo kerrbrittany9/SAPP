@@ -20,7 +20,6 @@ export class LiteratureListComponent implements OnInit {
 
   saveBook(title: string, authors: string, coverImage: string, comments: string, id: string) {
     this.googleBooksService.beginSaveBookConvo(title, authors, coverImage, comments, id);
-    alert("This book information has been saved!");
   }
 
 }
