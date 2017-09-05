@@ -31,7 +31,6 @@ export class CitiesApiService {
       var id = city + ": " + comments;
       var newCityConvo = new CityConversation(comments, city, id);
       this.citiesService.addCityConvo(newCityConvo);
-      console.log(city);
       alert("This city comment has been saved!");
     })
   }

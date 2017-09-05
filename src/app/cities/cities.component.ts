@@ -42,7 +42,20 @@ export class CitiesComponent implements OnInit {
 
   saveCityNotes(comments: string, city: string, id: string) {
     this.searchDone = false;
-    this.cityApiService.beginSaveCityConvo(comments, this.selection, id);
+    var arr = this.selection.toLowerCase().split(' ');
+    var capArr = [];
+    console.log(arr);
+    for (var i = 0; i < arr.length; i++) {
+      var word = arr[i].split('');
+      word[0] = word[0].toUpperCase();
+      var capWord = word.join('');
+      capArr.push(capWord);
+      console.log(capArr);
+    }
+    var capStr = capArr.join(' ');
+    console.log(capStr);
+
+    this.cityApiService.beginSaveCityConvo(comments, capStr, id);
   }
 
   ngOnInit() {
