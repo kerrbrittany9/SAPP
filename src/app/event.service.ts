@@ -43,31 +43,32 @@ export class EventService {
   // }
 
   getEventByName(eventName: string) {
+    // this.af.object('events/'+ id +"conversations/"+conversation.id);
+    // var ref = this.af.list('events/');
     return this.af.object('events/' + eventName);
   }
 
-  getEventConvos(targetEvent) {
-    var convosArr = [];
-    var eventEntryInFirebase = this.getEventByName(targetEvent.$key);
-    eventEntryInFirebase.subscribe(event => {
-      event.conversations.forEach(convo => {
-        convosArr.push(convo);
-      });
-    })
-    return convosArr;
+  getEventConvo(targetEvent, convo) {
+    return this.af.list('events/' + targetEvent.$key + '/conversations/' + convo.$key);
   }
 
   deleteConvoFromEvent(localTargetEvent, convoId) {
-    var eventEntryInFirebase = this.getEventByName(localTargetEvent.$key);
-    eventEntryInFirebase.subscribe(event => {
-      event.conversations.forEach(convo => {
-        if (convo === convoId) {
-          console.log("conditional in service method met!");
-          convo.remove();
-          //we need to mimic other module's methods for deletion (look at literatureService with getBOokById and deleteBook);
-        }
-      });
-    });
+    console.log(localTargetEvent.$key);
+    this.af.object('events/' + localTargetEvent.$key + '/conversations/' + 3).remove();
+    this.af.object('events/' + localTargetEvent.$key + '/conversations/' + convoId).subscribe(response => {
+      console.log(response);
+    })
+    // convoToDelete.remove();
+
+    // eventEntryInFirebase.subscribe(event => {
+    //   event.conversations.forEach(convo => {
+    //     if (convo === convoId) {
+    //       console.log("conditional in service method met!");
+    //       convo.remove();
+    //       //we need to mimic other module's methods for deletion (look at literatureService with getBOokById and deleteBook);
+    //     }
+    //   });
+    // });
   }
 
   saveTriviaToEvent(localEditedEvent) {

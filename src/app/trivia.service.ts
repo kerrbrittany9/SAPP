@@ -26,18 +26,40 @@ export class TriviaService {
 
   deleteTrivia(localTriviaToDelete){
     let foundTrivia = this.getTriviaById(localTriviaToDelete.$key);
+    // let foundEventConvo = this.eventService.getEventConvo();
+
     this.events = this.eventService.getEvents();
     this.events.subscribe(events => {
       events.forEach(event => {
-        var eventName = event.name;
-        var eventConvos = this.eventService.getEventConvos(event);
-        foundTrivia.subscribe(trivia => {
-          eventConvos.forEach(convo => {
-            if (convo == trivia.id) {
+        // let targetEvent = this.eventService.getEventByName(event.name);
+        event.conversations.forEach(convo => {
+          this.getTriviaById(convo).subscribe(trivia => {
+            console.log(convo);
+            console.log(trivia.$key);
+
+            if (trivia.$key === convo) {
               this.eventService.deleteConvoFromEvent(event, convo);
             }
-          })
+          });
         })
+
+        // var eventConvos = this.eventService.getEventConvo(targetEvent).subscribe(convos => {
+        //   console.log(convos);
+        //   // convos.forEach(convo => {
+        //   //   console.log(foundTrivia);
+        //     // if (convo === foundTrivia.id) {
+        //     //   let convoInFirebase = this.deleteConvoFromEvent(event, convo);
+        //     // }
+        //   // })
+        // })
+        foundTrivia.subscribe(trivia => {
+
+          // eventConvos.forEach(convo => {
+          //   if (convo == trivia.id) {
+          //     this.eventService.deleteConvoFromEvent(event, convo);
+          //   }
+          // })
+        // })
         // event.conversations.forEach(convo => {
         //   foundTrivia.subscribe(trivia => {
             // if (trivia.id == convo) {
@@ -48,9 +70,9 @@ export class TriviaService {
             // }
         //   })
         // })
-      })
-    });
-    foundTrivia.remove();
+        })
+      });
+      foundTrivia.remove();
+    })
   }
-
 }
