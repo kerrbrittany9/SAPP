@@ -15,16 +15,14 @@ export class TriviaApiService {
 
   saveTriviaObject(question: string, incorrect: string, correct: string, category: string, id: string) {
     return this.http.get("https://opentdb.com/api.php?amount=1&category=" + category)
-      .subscribe(response => {
-        let foundTrivia: Trivia;
-        var splitQuestion = question.split(" ");
-        var questionId = splitQuestion.join("-");
-        var correctId = correct.length;
-        var id = questionId + "-" + correctId;
+    .subscribe(response => {
+      let foundTrivia: Trivia;
+      var id = question + " " + correct;
 
-        foundTrivia = new Trivia(question, incorrect, correct, category, id);
-        // console.log(foundTrivia);
-        this.triviaService.addTrivia(foundTrivia);
+      foundTrivia = new Trivia(question, incorrect, correct, category, id);
+      // console.log(foundTrivia);
+      this.triviaService.addTrivia(foundTrivia);
+      alert("This bit of trivia has been saved!");
     });
   }
 }

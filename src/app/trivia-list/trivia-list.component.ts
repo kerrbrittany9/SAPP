@@ -19,7 +19,6 @@ export class TriviaListComponent implements OnInit {
 
   saveTrivia(question, incorrect, correct, category, id) {
     this.triviaAnswers.saveTriviaObject(question, incorrect, correct, category, id);
-    alert("this has been saved");
   }
 
   ngOnInit() {

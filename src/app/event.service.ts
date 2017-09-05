@@ -55,6 +55,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
+    alert("Your bit of trivia has been saved to " + localEditedEvent.name + "!");
   }
 
   saveBookToEvent(localEditedEvent) {
