@@ -20,10 +20,7 @@ showArticle = false;
   constructor(private currentEventsService: CurrentEventsService, private currentEventApiService: CurrentEventApiService) { }
 
   saveCurrentEvent(title: string, description: string) {
-    console.log(this.currentEventApiService);
-    console.log(this.childSource);
     this.currentEventApiService.saveCurrentEventObject(title, description, this.childSource);
-
   }
 
 }

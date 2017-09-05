@@ -14,7 +14,6 @@ currentEvent: FirebaseListObservable<any[]>;
   }
 
   addCurrentEvent(newCurrentEvent: CurrentEvent) {
-    console.log(newCurrentEvent);
     this.currentEvent.push(newCurrentEvent);
   }
 
