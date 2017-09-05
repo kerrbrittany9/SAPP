@@ -1,3 +1,21 @@
 #convo-list {
   padding-left: 2%;
 }
+
+.well {
+  width: 45%;
+  float: left;
+  height: 400px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: white;
+}
+
+#newEventButton {
+  margin-bottom: 20px;
+  background-color: white;
+  border: solid 1px grey;
+}
+.container {
+  margin-top: 5%;
+}

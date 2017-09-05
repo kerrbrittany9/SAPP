@@ -2,11 +2,16 @@ button {
   margin-left: 1%;
 }
 
-
+.container {
+  margin-top: 5%;
+}
 
 #pickSource {
   position: relative;
   left: 50%;
   transform: translate(-50%);
   width: 100%;
+}
+.well {
+  background-color: white;
 }

@@ -1,23 +1,25 @@
-<div *ngIf="addingNewEvent === false">
-  <button (click)="showAddEventForm()">Add New Event</button>
-</div>
-<div *ngIf="addingNewEvent === true">
-  <div class="form-group">
-    <input #newName placeholder="Event Name">
-    <input #newDate placeholder="Event Date">
-    <input #newAttendees placeholder="Event Attendees">
+<div class="container">
+  <div *ngIf="addingNewEvent === false">
+    <button (click)="showAddEventForm()" id='newEventButton'>Add New Event</button>
   </div>
-  <button (click)="beginAddingNewEvent(newName.value, newDate.value, newAttendees.value)">Save Event</button>
-</div>
+  <div *ngIf="addingNewEvent === true">
+    <div class="form-group">
+      <input #newName placeholder="Event Name">
+      <input #newDate placeholder="Event Date">
+      <input #newAttendees placeholder="Event Attendees">
+    </div>
+    <button (click)="beginAddingNewEvent(newName.value, newDate.value, newAttendees.value)">Save Event</button>
+  </div>
 
-<div *ngFor="let event of events | async" class="well">
-  <ul class="list-unstyled">
-    <h3>{{event.name}}</h3>
-    <li>When: {{event.date}}</li>
-    <li>Attendees: {{event.attendees}}</li>
-    <p>Saved Conversation Starters:</p>
-    <ul class="list-unstyled" id="convo-list">
-      <li *ngFor="let convo of event.conversations">{{convo}}</li>
+  <div *ngFor="let event of events | async" class="well">
+    <ul class="list-unstyled">
+      <h3>{{event.name}}</h3>
+      <li>When: {{event.date}}</li>
+      <li>Attendees: {{event.attendees}}</li>
+      <p>Saved Conversation Starters:</p>
+      <ul class="list-unstyled" id="convo-list">
+        <li *ngFor="let convo of event.conversations">{{convo}}</li>
+      </ul>
     </ul>
-  </ul>
+  </div>
 </div>

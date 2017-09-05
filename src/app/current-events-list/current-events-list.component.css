@@ -27,7 +27,6 @@
 .saveArticle {
   position: absolute;
   bottom: 2%;
-  overflow: visible;
   left: 45%;
 
 }
@@ -43,4 +42,7 @@
 #showArticle {
   position: absolute;
   bottom: 2%;
+}
+.well {
+  background-color: white;
 }

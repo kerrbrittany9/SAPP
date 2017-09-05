@@ -1,0 +1,46 @@
+.navbar {
+  background-color: white;
+  height: 60px;
+  color: rgb(136, 172, 255);
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid;
+  z-index:1;
+}
+
+.links {
+  color: grey;
+  z-index:1;
+}
+
+.well {
+  background-color: white;
+}
+.navbar-header {
+  height: 20px;
+  vertical-align: middle;
+}
+#logo {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 40px;
+  margin-left: 10%;
+}
+
+#navCon {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 1%;
+  left: 50%;
+  width: 100%;
+  background-color: rgb(136, 172, 255);
+  color: white;
+  text-align: center;
+  transform: translate(-50%);
+  border-top: 1px solid grey;
+  margin-top: 1%;
+}
