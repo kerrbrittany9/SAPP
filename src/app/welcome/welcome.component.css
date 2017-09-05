@@ -1,0 +1,6 @@
+.well {
+  background-image: url("../../assets/img/about_pic.jpg");
+  /*height: 1000px;*/
+  background-size: cover;
+  height: 900px;
+}
