@@ -42,7 +42,7 @@ export class CitiesComponent implements OnInit {
 
   saveCityNotes(comments: string, city: string, id: string) {
     this.searchDone = false;
-    this.cityApiService.beginSaveCityConvo(comments, city, id);
+    this.cityApiService.beginSaveCityConvo(comments, this.selection, id);
   }
 
   ngOnInit() {

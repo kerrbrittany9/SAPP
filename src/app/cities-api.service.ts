@@ -24,13 +24,13 @@ export class CitiesApiService {
   beginSaveCityConvo(comments: string, city: string, id: string) {
     return this.http.get("https://api.teleport.org/api/urban_areas/slug:" + this.cityInput + "/scores/")
     .subscribe(response => {
-      var splitComments = comments.split(" ");
-      var commentsId = splitComments.join("-");
-      var cityId = city.length;
-      var id = commentsId + "-" + cityId;
+      // var splitComments = comments.split(" ");
+      // var commentsId = splitComments.join("-");
+      // var cityId = city.length;
+      var id = city + ": " + comments;
       var newCityConvo = new CityConversation(comments, city, id);
       this.citiesService.addCityConvo(newCityConvo);
-      console.log(comments);
+      console.log(city);
       alert("This city comment has been saved!");
     })
   }
