@@ -20,6 +20,14 @@
       <br>
     <button (click)="getNews(newsSource.value)"id='newsSearch'>Search The News World</button>
   </div>
+
+  <p id="newsConvo">Talking about current events can be super fun and interesting, but can easily add a layer of stress if the conversation gets heated.</p>
+  <p id="newsConvo">Remember:</p>
+  <ul id="tips">
+    <li>Avoid debates.</li>
+    <li>Give space to your conversation partner and reflect on what they are saying.</li>
+    <li>Always keep in mind that the goal is to keep the conversation friendly and not to belittle others.</li>
+  </ul>
   <div *ngIf='articles'>
     <app-current-events-list [childArticles]='articles' [childSource]='sourceChoice'></app-current-events-list>
   </div>

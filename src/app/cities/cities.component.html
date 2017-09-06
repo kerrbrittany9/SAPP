@@ -30,18 +30,23 @@
   </form>
   <br>
   <p id="cityConvo">Talking about your hometown or a city that is interesting to you is a great way to drive conversation to something you are confortable talking about. Grab a fun fact or two and practice introducing them. "I really like traveling and I'm new to tech. I just read that Berlin has a thriving tech startup community. What has your experience been with traveling?"</p>
-  <h3>Tips</h3>
-  <ul id="tips">
-    <li>Try to ask open-ended questions.</li>
-    <li>Personalize your intro or response. Even if you've never visited </li>
-    <li>Boost your confidence by rehearsing with a few friends or writing notes for yourself. If you don't get the reaction you intended..Dont worry! Regroup and try again.</li>
-  </ul>
   <div *ngIf="searchDone === true">
     <h1><span class="capitalize"><em>{{selection}}</em></span></h1>
-    <div *ngFor="let stat of stats;">
-      <p>{{stat.name}}: {{stat.score_out_of_10 | number : '1.2-2'}} out of 10</p>
+    <div class="selection">
+      <div *ngFor="let stat of stats;">
+        <div id='stats'>
+          <p>{{stat.name}}: {{stat.score_out_of_10 | number : '1.2-2'}}/10</p>
+        </div>
+      </div>
     </div>
     <br>
+    <h3>Tips</h3>
+    <ul id="tips">
+      <li>Don't try to memorize all of the data. Choose a few categories that strike you.</li> 
+      <li>Try to ask open-ended questions.</li>
+      <li>Personalize your intro or response. Even if you've never visited {{selection}} something drew you to it. Don't be afraid to share. "I've always wanted to learn a language and I love Brazilian music. Rio de Janeiro seems like it has a great vacation vibe. Where would you want to travel in South America?" </li>
+      <li>Boost your confidence by rehearsing with a few friends or writing notes for yourself. If you don't get the reaction you intended..Dont worry! Regroup and try again.</li>
+    </ul>
     <label for="city-notes">Write down some notes to save for later.</label><br>
     <textarea #newCityNotes></textarea>
     <label for="city-name">What city is this for?</label>

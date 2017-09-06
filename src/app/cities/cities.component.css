@@ -22,3 +22,14 @@ button {
 select {
   background-color: white;
 }
+
+.selection {
+  background: linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url("../../assets/img/skyline.jpg");
+  height: 550px;
+}
+
+#stats {
+  color: white;
+  margin-left: 20px;
+  font-size: 16px;
+}
