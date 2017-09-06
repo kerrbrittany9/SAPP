@@ -90,7 +90,7 @@ Thanks to the following API's used:
   * [Cities](https://developers.teleport.org/api/getting_started/#life_quality_ua)
   * [Current Events](https://newsapi.org/)
   * [Trivia](https://opentdb.com/api_config.php)
-
+  * Black and white photography by [Elizaveta Porodina](https://www.behance.net/gallery/56210021/Air-becomes-Wind)
 ## Known Bugs
 * There are no known bugs at the time.
 
