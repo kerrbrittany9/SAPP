@@ -61,11 +61,12 @@ export var masterNewsApiConfig = {
 
 * Make another file called: **src/app/api-key-google.ts**
 
-  ```
+  ````
   export var masterGoogleBooksConfig = {
     apiKey: "xxxx",
   }
-```
+  ````
+
 * Visit [GoogleBooks](https://console.developers.google.com/projectselector/apis/credentials) to retrieve your API Key and paste it into the file accordingly.
 ----
 
