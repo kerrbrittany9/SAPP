@@ -16,12 +16,11 @@
       if the user isn’t logged in, we’ll have an event binding to login.
       <a (click)="login()">Log in</a>
     </li> -->
+    <li class="links"><a routerLink="events">My Events</a></li>
     <li class="links"><a routerLink="literature">Literature</a></li>
     <li class="links"><a routerLink="trivia">Trivia</a></li>
     <li class="links"><a routerLink="current-events">Current Events</a></li>
     <li class="links"><a routerLink="cities">Cities</a></li>
-    <li class="links"><a routerLink="events">My Events</a></li>
-    <li class="links"><a routerLink="about">About</a></li>
   </ul>
 </div>
 </nav>
@@ -30,4 +29,5 @@
 
 <router-outlet></router-outlet>
 
-<footer>Copyright &copy; Saucesome</footer>
+<footer>
+<a routerLink="about"><span class="footer"> about the team</span></a></footer>
