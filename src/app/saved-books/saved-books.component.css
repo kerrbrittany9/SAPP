@@ -20,3 +20,8 @@ button {
 select {
   background-color: white;
 }
+
+#delete {
+ padding-bottom: 1px;
+ margin-left: 388px;
+}
