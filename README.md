@@ -84,6 +84,7 @@ export var masterNewsApiConfig = {
 * TypeScript
 * Firebase
 * Bootstrap, CSS, and HTML
+* Sweetalert2
 
 ## Acknowledgements
 Thanks to the following API's used:

@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Trivia } from './trivia.model';
 import { TriviaService } from './trivia.service';
+import swal  from 'sweetalert2';
 
 @Injectable()
 export class TriviaApiService {
@@ -22,7 +23,7 @@ export class TriviaApiService {
       foundTrivia = new Trivia(question, incorrect, correct, category, id);
       // console.log(foundTrivia);
       this.triviaService.addTrivia(foundTrivia);
-      alert("This bit of trivia has been saved!");
+      swal('Congrats!', "This bit of trivia has been saved!", 'success');
     });
   }
 }

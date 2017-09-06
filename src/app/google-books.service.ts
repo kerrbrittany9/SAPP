@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { LiteratureService } from './literature.service';
 import { BookConversation } from './book-conversation.model';
-
+import swal  from 'sweetalert2';
 
 @Injectable()
 export class GoogleBooksService {
@@ -22,7 +22,7 @@ export class GoogleBooksService {
       var id = title + " by " + authors[0] + ": '" + comments + ".'";
       var newBookConvo = new BookConversation(title, authors, coverImage, comments, id);
       this.literatureService.addBookConvo(newBookConvo);
-      alert("This book information has been saved!");
+      swal('Congrats!', 'This book information has been saved!', 'success');
   });
   }
 

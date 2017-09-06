@@ -5,6 +5,7 @@ import { CurrentEventsComponent } from '../current-events/current-events.compone
 import {CurrentEvent} from '../current-event.model';
 import { CurrentEventApiService } from '../current-event-api.service';
 import { EventService } from '../event.service';
+import swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-current-events-list',
@@ -26,7 +27,7 @@ showArticle = false;
 
   saveCurrentEvent(title: string, description: string) {
     this.currentEventApiService.saveCurrentEventObject(title, description, this.childSource);
-    alert("This news event has been saved!");
+    swal('Congrats!', "This news event has been saved!", 'success');
   }
 
 }

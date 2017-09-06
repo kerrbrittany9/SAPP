@@ -12,6 +12,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "sweetalert": "^2.0.0",
+    "sweetalert2": "^6.6.10"
   }
 }
