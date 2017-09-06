@@ -1,32 +1,115 @@
 # SAPP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+#### _Epicodus Team Project: Social Anxiety Party Planning, September 6th, 2017_
+_**By Brittany Kerr, Calla Rudolph, Max Scher, Larry Taylor, and Michelle Poterek **_
 
-## Configure API-KEYs
-1. Create a file (src/app/api-keys.ts) for Firebase API configuration that contains the following code:
-```
-var masterFirebaseConfig = {
-   apiKey: "AIzaSyCBi3umGRUzFLVtCLXvgrQFjhHTlmNS4WA",
-   authDomain: "sapp-f1a58.firebaseapp.com",
-   databaseURL: "https://sapp-f1a58.firebaseio.com",
-   projectId: "sapp-f1a58",
-   storageBucket: "sapp-f1a58.appspot.com",
-   messagingSenderId: "186933116380"
- };
+## Description
+This web application will empower people with social anxiety to better prepare for social events, mitigate their symptoms, and reduce their isolationist impulses. Users can choose to search for conversations revolving around literature, trivia, current events, and various cities for assistance in conversations.
 
- Behance: p9NvD0geVlicPixI9eG1hEROZnK4bijW
- opentdb.com
-```
-# Sapp
+## SAPP Program Preview
+![Home Page Preview](src/assets/img/HomePreview.png)
+_SAPP Home Page_
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+![Current Events](src/assets/img/CurrentEventsSearch.png)
+_Users are able to search for current events from 12 different news sources and preview the top 9 stories from the source selected._
 
-2. Create a 2nd file (src/app/api-key-google.ts) for GoogleBooks API configuration that contains the following code:
+![Literature Search](src/assets/img/LiteratureSearch.png)
+_Users can search for a book based on author, title, or subject matter._
+
+![Saved Literature Preview](src/assets/img/SavedBooks.png)
+_Saved Literature Page that displays before searching for an author. This content remains at the bottom of the page after searching for a book by title, subject, or author. Users have the ability to save a book to an event using the dropdown menu._
+
+
+## Installation Instructions
+* Open Terminal and type:
+* `$ cd Desktop`
+* `$ git clone https://github.com/kerrbrittany9/SAPP.git`
+* `$ cd SAPP`
+* `$ npm install`
+* `$ bower install`
+* `$ atom .`
+
+### Firebase Configuration
+* First off, you'll need to make a free account at Firebase's website. [Firebase](https://www.learnhowtoprogram.com/javascript/angular-extended/firebase-introduction-and-setup)
+* Create a New Project. Select this option, provide a name for your new project, and select your Country/region from the drop-down menu.
+* Select Add Firebase to your web app.
+* In the project, make a file called: **src/app/api-keys.ts**
+* paste the code below into your api-keys.ts file.
+
+````
+export var masterFirebaseConfig = {
+    apiKey: "xxxx",
+    authDomain: "xxxx.firebaseapp.com",
+    databaseURL: "https://xxxx.firebaseio.com",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "xxxx"
+  };
+
+````
+* With the information provided in the modal, replace the "xxxx" variables with your own firebase credentials in your api-keys.ts file.
+
+### Configure API Keys
+
+* In the project, make a file called: **src/app/api-key-current-events.ts** and paste the following code.
+````
+export var masterNewsApiConfig = {
+  apiKey: "xxxx",
+}
+````
+* Visit [News API](https://newsapi.org/register) and register for an API key. Replace the xxxx's with your key in the `api-key-current-events` file
+----
+
+* Make another file called: **src/app/api-key-google.ts**
+
+  ```
+  export var masterGoogleBooksConfig = {
+    apiKey: "xxxx",
+  }
 ```
- var masterGoogleBooksConfig = {
-   apiKey: "AIzaSyDikkvF4JUdJQKIcgpcZRYgOGAr3rdTKL4";
- }
-```
+* Visit [GoogleBooks](https://console.developers.google.com/projectselector/apis/credentials) to retrieve your API Key and paste it into the file accordingly.
+----
+
+### Serving Program
+* Be sure to save these changes in your code text editor (Atom).
+* In Terminal, run `$ ng serve`
+* In your Browser (Chrome preferred) navigate to [http://localhost:4200/](http://localhost:4200/)
+
+
+## Technologies Used
+* Angular CLI
+* NodeJS
+* Bower
+* TypeScript
+* Firebase
+* Bootstrap, CSS, and HTML
+
+## Acknowledgements
+Thanks to the following API's used:
+  * [Google Books](https://console.developers.google.com/apis/library?project=project-name-179116&q=google%20book)
+  * [Cities](https://developers.teleport.org/api/getting_started/#life_quality_ua)
+  * [Current Events](https://newsapi.org/)
+  * [Trivia](https://opentdb.com/api_config.php)
+
+## Known Bugs
+* There are no known bugs at the time.
+
+## Support and contact details
+Please feel empowered to make any changes to this repository by forking it and making changes accordingly.
+
+## Check Team Saucesome's GitHubs!
+* [Brittany Kerr](https://github.com/kerrbrittany9)
+* [Michelle Poterek](https://github.com/PoterekM)
+* [Max Scher](https://github.com/maxobaxo)
+* [Calla Rudolph](https://github.com/CallaRudolph)
+* [Larry Taylor](https://github.com/larryjtaylor)
+
+## License Information
+This web application is free to use under the MIT License &copy; Team Saucesome.
+
+----
+
+
+# _Additional Developer Information_
 
 ## Development server
 
