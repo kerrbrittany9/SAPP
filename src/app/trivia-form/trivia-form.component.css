@@ -15,3 +15,11 @@
 #savedTrivies {
   margin-left: 2%;
 }
+button {
+  background-color: white;
+  border: 1px solid;
+}
+
+select {
+  background-color: white;
+}
