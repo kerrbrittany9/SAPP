@@ -1,0 +1,27 @@
+.container {
+  margin-top: 5%;
+  font-family: 'Arapey', serif;
+}
+
+.headshot {
+  height: 400px;
+  width: 350px;
+  display: block;
+  margin-left: 30%;
+}
+
+.well {
+  width: 45%;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: white;
+}
+
+h1 {
+  margin-left: 2%;
+}
+
+h3 {
+  margin-left: 23%;
+}
