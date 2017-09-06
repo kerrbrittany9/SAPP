@@ -26,7 +26,6 @@ export class SavedCurrentEventsComponent implements OnInit {
   sendCurrentEventToEvent(event: Event, currentEvent: CurrentEvent) {
     event.conversations.push(currentEvent.id);
     this.eventService.saveCurrentEventToEvent(event);
-    alert("Current event has been saved to " + event.name + "!");
   }
 
   beginDeletingCurrentEvent(currentEventToDelete) {

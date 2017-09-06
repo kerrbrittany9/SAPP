@@ -13,24 +13,24 @@ export class CitiesApiService {
     // this.cityConversations = database.list('cityConversations');
   }
 
-  cityInput = [];
+  cityInput;
 
   getCityStats(city: string) {
     var cityLower = city.toLowerCase();
-    this.cityInput.push(cityLower);
+    this.cityInput = cityLower;
     return this.http.get("https://api.teleport.org/api/urban_areas/slug:" + cityLower + "/scores/")
   }
 
   beginSaveCityConvo(comments: string, city: string, id: string) {
     return this.http.get("https://api.teleport.org/api/urban_areas/slug:" + this.cityInput + "/scores/")
     .subscribe(response => {
-      var splitComments = comments.split(" ");
-      var commentsId = splitComments.join("-");
-      var cityId = city.length;
-      var id = commentsId + "-" + cityId;
+      // var splitComments = comments.split(" ");
+      // var commentsId = splitComments.join("-");
+      // var cityId = city.length;
+      // console.log(city);
+      var id = city + ": " + comments;
       var newCityConvo = new CityConversation(comments, city, id);
       this.citiesService.addCityConvo(newCityConvo);
-      console.log(comments);
       alert("This city comment has been saved!");
     })
   }

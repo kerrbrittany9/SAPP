@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Trivia } from './trivia.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { EventService } from './event.service';
 
 @Injectable()
 export class TriviaService {
   trivia: FirebaseListObservable<any[]>;
+  events: FirebaseListObservable<any[]>;
+  triviaToDelete;
 
-  constructor(private af: AngularFireDatabase) {
+  constructor(private af: AngularFireDatabase, private eventService: EventService) {
     this.trivia = af.list('trivia');
   }
 
@@ -22,9 +25,32 @@ export class TriviaService {
     return this.af.object('/trivia/' + id);
   }
 
-  deleteTrivia(localTriviaToDelete){
-    let foundTrivia = this.getTriviaById(localTriviaToDelete.$key);
-    foundTrivia.remove();
+  getEventConvo(eventKey: string, convoIndex: number) {
+    return this.af.object('/events/' + eventKey + '/conversations/' + convoIndex);
   }
 
+  deleteTrivia(localTriviaToDelete) {
+    this.getTriviaById(localTriviaToDelete.$key).subscribe(trivia => {
+      this.triviaToDelete = trivia.id;
+
+      this.events = this.eventService.getEvents();
+      this.events.subscribe(events => {
+        events.forEach(event => {
+          for (var i = 0; i < event.conversations.length; i++) {
+            var targetConvo = this.getEventConvo(event.$key, i);
+
+            this.getEventConvo(event.$key, i).subscribe(convo => {
+              console.log(event.$key);
+              console.log(this.triviaToDelete);
+              if (convo.$value === this.triviaToDelete) {
+                console.log("condition met!");
+                targetConvo.remove();
+              }
+            });
+          }
+        });
+      })
+    });
+    this.getTriviaById(localTriviaToDelete.$key).remove();
+  }
 }

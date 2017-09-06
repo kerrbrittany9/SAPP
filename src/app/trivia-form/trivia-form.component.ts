@@ -161,7 +161,7 @@ export class TriviaFormComponent implements OnInit {
         currentTrivia.incorrect_answers = wrong_answers;
         triviaToDisplay.push(currentTrivia);
       });
-      console.log(triviaToDisplay[0]);
+      // console.log(triviaToDisplay[0]);
       this.triviaList = triviaToDisplay;
     });
   }

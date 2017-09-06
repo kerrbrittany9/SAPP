@@ -30,17 +30,15 @@
   </form>
 
   <div *ngIf="searchDone === true">
-    <h1><span class="capitalize"><em>{{selection}}</em></span></h1>
+    <h1><em>{{selection}}</em></h1>
     <div *ngFor="let stat of stats;">
       <p>{{stat.name}}: {{stat.score_out_of_10 | number : '1.2-2'}} out of 10</p>
     </div>
     <br>
     <label for="city-notes">Useful information? Write down some notes to save for later.</label><br>
     <textarea #newCityNotes></textarea>
-    <label for="city-name">What city is this for?</label>
-    <input #newCity>
     <br>
-    <button (click)="saveCityNotes(newCityNotes.value, newCity.value)">Save notes</button>
+    <button (click)="saveCityNotes(newCityNotes.value)">Save notes</button>
   </div>
 
   <app-saved-cities></app-saved-cities>
