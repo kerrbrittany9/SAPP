@@ -3,12 +3,13 @@ import { masterNewsApiConfig } from '../api-key-current-events';
 import { Observable } from 'rxjs/Observable';
 import { CurrentEventsService } from '../current-events.service';
 import {CurrentEventApiService} from '../current-event-api.service';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-current-events',
   templateUrl: './current-events.component.html',
   styleUrls: ['./current-events.component.css'],
-  providers: [CurrentEventsService, CurrentEventApiService]
+  providers: [CurrentEventsService, CurrentEventApiService, EventService]
 })
 
 export class CurrentEventsComponent implements OnInit {
@@ -18,7 +19,11 @@ export class CurrentEventsComponent implements OnInit {
     articles: any[];
     sourceChoice = null;
 
-    constructor(private currentEventsService: CurrentEventsService, private currentEventApiService: CurrentEventApiService) { }
+    constructor(
+      private currentEventsService: CurrentEventsService,
+      private currentEventApiService: CurrentEventApiService,
+      private eventService: EventService
+    ) { }
 
     getNews(source: string){
       this.sourceChoice = source;
