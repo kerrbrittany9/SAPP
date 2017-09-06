@@ -23,3 +23,8 @@ button {
 #savedNews {
   margin-left: 2%;
 }
+
+#newsSearch {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

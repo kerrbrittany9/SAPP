@@ -18,7 +18,7 @@
         <option value='usa-today'>USA Today</option>
       </select>
       <br>
-    <button (click)="getNews(newsSource.value)">Search The News World</button>
+    <button (click)="getNews(newsSource.value)"id='newsSearch'>Search The News World</button>
   </div>
   <div *ngIf='articles'>
     <app-current-events-list [childArticles]='articles' [childSource]='sourceChoice'></app-current-events-list>
