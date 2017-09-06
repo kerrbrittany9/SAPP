@@ -7,6 +7,7 @@ import { EventService } from './event.service';
 export class TriviaService {
   trivia: FirebaseListObservable<any[]>;
   events: FirebaseListObservable<any[]>;
+  triviaToDelete;
 
   constructor(private af: AngularFireDatabase, private eventService: EventService) {
     this.trivia = af.list('trivia');
@@ -24,55 +25,32 @@ export class TriviaService {
     return this.af.object('/trivia/' + id);
   }
 
-  deleteTrivia(localTriviaToDelete){
-    let foundTrivia = this.getTriviaById(localTriviaToDelete.$key);
-    // let foundEventConvo = this.eventService.getEventConvo();
+  getEventConvo(eventKey: string, convoIndex: number) {
+    return this.af.object('/events/' + eventKey + '/conversations/' + convoIndex);
+  }
 
-    this.events = this.eventService.getEvents();
-    this.events.subscribe(events => {
-      events.forEach(event => {
-        // let targetEvent = this.eventService.getEventByName(event.name);
-        event.conversations.forEach(convo => {
-          this.getTriviaById(convo).subscribe(trivia => {
-            console.log(convo);
-            console.log(trivia.$key);
+  deleteTrivia(localTriviaToDelete) {
+    this.getTriviaById(localTriviaToDelete.$key).subscribe(trivia => {
+      this.triviaToDelete = trivia.id;
 
-            if (trivia.$key === convo) {
-              this.eventService.deleteConvoFromEvent(event, convo);
-            }
-          });
-        })
+      this.events = this.eventService.getEvents();
+      this.events.subscribe(events => {
+        events.forEach(event => {
+          for (var i = 0; i < event.conversations.length; i++) {
+            var targetConvo = this.getEventConvo(event.$key, i);
 
-        // var eventConvos = this.eventService.getEventConvo(targetEvent).subscribe(convos => {
-        //   console.log(convos);
-        //   // convos.forEach(convo => {
-        //   //   console.log(foundTrivia);
-        //     // if (convo === foundTrivia.id) {
-        //     //   let convoInFirebase = this.deleteConvoFromEvent(event, convo);
-        //     // }
-        //   // })
-        // })
-        foundTrivia.subscribe(trivia => {
-
-          // eventConvos.forEach(convo => {
-          //   if (convo == trivia.id) {
-          //     this.eventService.deleteConvoFromEvent(event, convo);
-          //   }
-          // })
-        // })
-        // event.conversations.forEach(convo => {
-        //   foundTrivia.subscribe(trivia => {
-            // if (trivia.id == convo) {
-            //   let targetConvo = this.
-            //   // console.log(trivia.id);
-            //   // console.log(convo);
-            //   convo.remove();
-            // }
-        //   })
-        // })
-        })
-      });
-      foundTrivia.remove();
-    })
+            this.getEventConvo(event.$key, i).subscribe(convo => {
+              console.log(event.$key);
+              console.log(this.triviaToDelete);
+              if (convo.$value === this.triviaToDelete) {
+                console.log("condition met!");
+                targetConvo.remove();
+              }
+            });
+          }
+        });
+      })
+    });
+    this.getTriviaById(localTriviaToDelete.$key).remove();
   }
 }
