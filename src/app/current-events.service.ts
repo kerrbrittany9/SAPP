@@ -11,7 +11,7 @@ export class CurrentEventsService {
   currentEvent: FirebaseListObservable<any[]>;
   events: FirebaseListObservable<any[]>;
   currentEventToDelete;
-  
+
   constructor(
     private http: Http,
     private af: AngularFireDatabase,
@@ -46,10 +46,7 @@ export class CurrentEventsService {
             var targetConvo = this.getEventConvo(event.$key, i);
 
             this.getEventConvo(event.$key, i).subscribe(convo => {
-              console.log(event.$key);
-              console.log(this.currentEventToDelete);
               if (convo.$value === this.currentEventToDelete) {
-                console.log("condition met!");
                 targetConvo.remove();
               }
             });

@@ -46,10 +46,7 @@ export class CitiesService {
             var targetConvo = this.getEventConvo(event.$key, i);
 
             this.getEventConvo(event.$key, i).subscribe(convo => {
-              console.log(event.$key);
-              console.log(this.cityToDelete);
               if (convo.$value === this.cityToDelete) {
-                console.log("condition met!");
                 targetConvo.remove();
               }
             });

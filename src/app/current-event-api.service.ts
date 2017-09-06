@@ -24,7 +24,6 @@ export class CurrentEventApiService {
       var id = title;
       foundCurrentEvent = new CurrentEvent(title, description, id);
       this.currentEventsService.addCurrentEvent(foundCurrentEvent);
-      console.log(id);
     });
   }
 }

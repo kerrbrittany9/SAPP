@@ -31,10 +31,8 @@ export class EventService {
   // }
 
   deleteConvoFromEvent(localTargetEvent, convoId) {
-    console.log(localTargetEvent.$key);
     this.af.object('events/' + localTargetEvent.$key + '/conversations/' + 5).remove();
     this.af.object('events/' + localTargetEvent.$key + '/conversations/' + convoId).subscribe(response => {
-      console.log(response);
     })
   }
 

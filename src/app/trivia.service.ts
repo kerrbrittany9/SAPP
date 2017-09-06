@@ -40,10 +40,7 @@ export class TriviaService {
             var targetConvo = this.getEventConvo(event.$key, i);
 
             this.getEventConvo(event.$key, i).subscribe(convo => {
-              console.log(event.$key);
-              console.log(this.triviaToDelete);
               if (convo.$value === this.triviaToDelete) {
-                console.log("condition met!");
                 targetConvo.remove();
               }
             });
