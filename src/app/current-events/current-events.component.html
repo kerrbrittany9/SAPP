@@ -18,8 +18,11 @@
         <option value='usa-today'>USA Today</option>
       </select>
       <br>
-    <button (click)="getNews(newsSource.value)">Search The News World</button>
+    <button (click)="getNews(newsSource.value)"id='newsSearch'>Search The News World</button>
   </div>
+
+  <p id="newsConvo">Talking about current events can be super fun and interesting. However, there is always the push and pull between chatting relevant topics and entertaining an overly heated conversation.</p>
+
   <div *ngIf='articles'>
     <app-current-events-list [childArticles]='articles' [childSource]='sourceChoice'></app-current-events-list>
   </div>

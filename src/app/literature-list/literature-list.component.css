@@ -13,3 +13,16 @@
   top: 115%;
   left: 80%;
 }
+button {
+  background-color: white;
+  border: 1px solid;
+}
+
+#bookConvo {
+  font-size: 17px;
+  font-family: 'Arapey', serif;
+}
+
+#tips {
+  font-size: 16px;
+}

@@ -6,3 +6,11 @@
   background-color: white;
   font-family: 'Arapey', serif;
 }
+button {
+  background-color: white;
+  border: 1px solid;
+}
+
+select {
+  background-color: white;
+}

@@ -51,3 +51,15 @@
 .container {
   font-family: 'Arapey', serif;
 }
+button {
+  background-color: white;
+  border: 1px solid;
+}
+
+#newsConvo {
+  font-size: 17px;
+}
+
+#tips {
+  font-size: 16px;
+}
