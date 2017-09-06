@@ -4,15 +4,15 @@
 }
 
 .headshot {
-  height: 400px;
-  width: 350px;
+  /*height: 400px;
+  width: 350px;*/
   display: block;
-  margin-left: 30%;
+  margin-left: 5%;
 }
 
 .well {
-  width: 45%;
-  float: left;
+  /*width: 45%;
+  float: left;*/
   margin-left: 2%;
   margin-right: 2%;
   background-color: white;
@@ -24,4 +24,32 @@ h1 {
 
 h3 {
   margin-left: 23%;
+}
+
+#brittany {
+  height: 400px;
+  width: 400px;
+}
+
+#max {
+  max-width: 100%;
+}
+
+#michelle {
+  height: 400px;
+  width: 350px;
+}
+#larry {
+  height: 400px;
+  width: 350px;
+}
+
+.git {
+  margin-top: 12%;
+}
+ul {
+  margin-top: 100px;
+}
+li {
+  font-size: 26px;
 }
