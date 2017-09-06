@@ -5,7 +5,6 @@ import { BookConversation } from '../book-conversation.model';
 import { EventService } from '../event.service';
 import { Event } from '../event.model';
 
-
 @Component({
   selector: 'app-saved-books',
   templateUrl: './saved-books.component.html',
