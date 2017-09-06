@@ -26,9 +26,9 @@ export class EventService {
     return this.af.object('events/' + eventName);
   }
 
-  getEventConvo(targetEvent, convo) {
-    return this.af.list('events/' + targetEvent.$key + '/conversations/' + convo.$key);
-  }
+  // getEventConvo(targetEvent, convo) {
+  //   return this.af.list('events/' + targetEvent.$key + '/conversations/' + convo.$key);
+  // }
 
   deleteConvoFromEvent(localTargetEvent, convoId) {
     console.log(localTargetEvent.$key);
