@@ -68,7 +68,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
-    alert("Current event has been saved to " + localEditedEvent.name + "!");
+    alert("This news event has been saved to " + localEditedEvent.name + "!");
   }
 
   saveCityToEvent(localEditedEvent) {

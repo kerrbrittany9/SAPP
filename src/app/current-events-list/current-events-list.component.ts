@@ -26,6 +26,7 @@ showArticle = false;
 
   saveCurrentEvent(title: string, description: string) {
     this.currentEventApiService.saveCurrentEventObject(title, description, this.childSource);
+    alert("This news event has been saved!");
   }
 
 }
