@@ -3,9 +3,9 @@
 #### _Epicodus Team Project: Social Anxiety Party Planning, September 6th, 2017_
 **_By Brittany Kerr, Calla Rudolph, Max Scher, Larry Taylor, and Michelle Poterek_**
 
+**Visit the page at: https://sapp-f1a58.firebaseapp.com**
 ## Description
 This web application will empower people with social anxiety to better prepare for social events, mitigate their symptoms, and reduce their isolationist impulses. Users can create an event they will be attending. Users can choose to search for conversations revolving around literature, trivia, current events, and various cities for assistance in conversations and save these points of conversation to an event. If they would like to remove a conversation, it will also be deleted from the associated event.
-
 ## SAPP Program Preview
 ![Home Page Preview](src/assets/img/HomePreview.png)
 _SAPP Home Page_
@@ -17,7 +17,8 @@ _Users are able to search for current events from 12 different news sources and 
 _Users can search for a book based on author, title, or subject matter._
 
 ![Saved Literature Preview](src/assets/img/SavedBooks.png)
-_Saved Literature Page that displays before searching for an author. This content remains at the bottom of the page after searching for a book by title, subject, or author. Users have the ability to save a book to an event using the dropdown menu._
+_Saved literature page that displays before searching for an author. This content remains at the bottom of the page after searching for a book by title, subject, or author. Users have the ability to save a book to an event using the dropdown menu._
+
 
 
 ## Installation Instructions
