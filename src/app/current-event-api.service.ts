@@ -16,19 +16,14 @@ export class CurrentEventApiService {
   }
 
   saveCurrentEventObject(title: string, description: string, source: string) {
-    console.log("hello");
-    console.log(source);
+    // console.log("hello");
+    // console.log(source);
     return this.http.get("https://newsapi.org/v1/articles?source=" + source + "&apikey=54c70d579915400ebe7b9d7c36f6fb77")
-      .subscribe(response => {
-        console.log("hello");
-        let foundCurrentEvent: CurrentEvent;
-        var splitTitle = title.split(" ");
-        var titleId = splitTitle.join("-");
-        var id = titleId;
-        foundCurrentEvent = new CurrentEvent(title, description, id);
-        console.log(foundCurrentEvent);
-        this.currentEventsService.addCurrentEvent(foundCurrentEvent);
-
+    .subscribe(response => {
+      let foundCurrentEvent: CurrentEvent;
+      var id = title;
+      foundCurrentEvent = new CurrentEvent(title, description, id);
+      this.currentEventsService.addCurrentEvent(foundCurrentEvent);
     });
   }
 }

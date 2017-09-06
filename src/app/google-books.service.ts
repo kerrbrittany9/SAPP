@@ -19,10 +19,7 @@ export class GoogleBooksService {
     var keyword;
     return this.http.get("https://www.googleapis.com/books/v1/volumes?q=" + keyword)
     .subscribe(response => {
-      var splitTitle = title.split(" ");
-      var titleId = splitTitle.join("-");
-      var authorsId = authors.length;
-      var id = titleId + "-" + authorsId;
+      var id = title + " by " + authors[0] + ": '" + comments + ".'";
       var newBookConvo = new BookConversation(title, authors, coverImage, comments, id);
       this.literatureService.addBookConvo(newBookConvo);
       alert("This book information has been saved!");

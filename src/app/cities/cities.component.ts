@@ -3,12 +3,13 @@ import { Observable } from 'rxjs/Observable';
 import { CitiesApiService } from '../cities-api.service';
 import { CityConversation } from '../city-conversation.model';
 import { CitiesService } from '../cities.service';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-cities',
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.css'],
-  providers: [ CitiesApiService, CitiesService ]
+  providers: [ CitiesApiService, CitiesService, EventService ]
 })
 export class CitiesComponent implements OnInit {
   selection: string = null;
@@ -16,7 +17,11 @@ export class CitiesComponent implements OnInit {
   searchDone: boolean = false;
   cityNotes: any[] = null;
 
-  constructor(private cityApiService: CitiesApiService, private citiesService: CitiesService) { }
+  constructor(
+    private cityApiService: CitiesApiService,
+    private citiesService: CitiesService,
+    private eventService: EventService
+  ) { }
 
   getCityInfo(city: string) {
     this.cityApiService.getCityStats(city).subscribe(response => {
@@ -42,7 +47,16 @@ export class CitiesComponent implements OnInit {
 
   saveCityNotes(comments: string, city: string, id: string) {
     this.searchDone = false;
-    this.cityApiService.beginSaveCityConvo(comments, city, id);
+    var arr = this.selection.toLowerCase().split(' ');
+    var capArr = [];
+    for (var i = 0; i < arr.length; i++) {
+      var word = arr[i].split('');
+      word[0] = word[0].toUpperCase();
+      var capWord = word.join('');
+      capArr.push(capWord);
+    }
+    var capStr = capArr.join(' ');
+    this.cityApiService.beginSaveCityConvo(comments, capStr, id);
   }
 
   ngOnInit() {

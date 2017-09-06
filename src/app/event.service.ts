@@ -22,39 +22,29 @@ export class EventService {
     this.events.push(newEvent);
   }
 
-  // checkForEventConvos(event) {
-  //   event.conversations = event.conversations !== undefined ? event.conversations : [];
-  // }
-
-  // getTriviaConvosOfEventById(id: string) {
-  //   return this.af.object('trivia/' + id);
-  // }
-  //
-  // getBookConvosOfEventById(id: string) {
-  //   return this.af.object('bookConversations/' + id);
-  // }
-  //
-  // getEventConversationsByEventName(eventName: string) {
-  //   var eventConvos = this.getEventByName(eventName);
-  //   eventConvos.forEach(function(convoId: string) {
-  //     var triviaConvos = this.getTriviaConvosOfEventById(convoId);
-  //     var bookConvos = this.getBookConvosOfEventById(convoId);
-  //   });
-  // }
-
   getEventByName(eventName: string) {
     return this.af.object('events/' + eventName);
   }
 
+  // getEventConvo(targetEvent, convo) {
+  //   return this.af.list('events/' + targetEvent.$key + '/conversations/' + convo.$key);
+  // }
+
+  deleteConvoFromEvent(localTargetEvent, convoId) {
+    this.af.object('events/' + localTargetEvent.$key + '/conversations/' + 5).remove();
+    this.af.object('events/' + localTargetEvent.$key + '/conversations/' + convoId).subscribe(response => {
+    })
+  }
+
   saveTriviaToEvent(localEditedEvent) {
     var eventEntryInFirebase = this.getEventByName(localEditedEvent.$key);
-    // this.checkForEventConvos(eventEntryInFirebase);
     eventEntryInFirebase.update({
       name: localEditedEvent.name,
       date: localEditedEvent.date,
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
+    alert("Your bit of trivia has been saved to " + localEditedEvent.name + "!");
   }
 
   saveBookToEvent(localEditedEvent) {
@@ -65,6 +55,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
+    alert("Your book info has been saved to " + localEditedEvent.name);
   }
 
   saveCurrentEventToEvent(localEditedEvent) {
@@ -75,6 +66,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
+    alert("This news event has been saved to " + localEditedEvent.name + "!");
   }
 
   saveCityToEvent(localEditedEvent) {
@@ -85,5 +77,6 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
+    alert("Your city notes have been saved to " + localEditedEvent.name + "!");
   }
 }

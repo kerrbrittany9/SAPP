@@ -7,7 +7,7 @@
         <p>{{article.publishedAt}}</p>
         <a href={{article.url}} target="_blank"><button id='showArticle'>Show Article</button></a>
         <br>
-        <img src="{{article.urlToImage}}" alt="Image of Book Cover" id='newsImage'/>
+        <img src="{{article.urlToImage}}" alt="Image for News Story" id='newsImage'/>
         <br>
         <button (click)="saveCurrentEvent(article.title, article.description)" class='saveArticle'>Save Current Event</button>
       </div>
