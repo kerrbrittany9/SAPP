@@ -4,6 +4,7 @@ import { Event } from './event.model';
 import { Trivia} from './trivia.model';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import swal  from 'sweetalert2';
 
 @Injectable()
 export class EventService {
@@ -44,7 +45,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
-    alert("Your bit of trivia has been saved to " + localEditedEvent.name + "!");
+    swal('Congrats!', "Your bit of trivia has been saved to " + localEditedEvent.name + "!", 'success');
   }
 
   saveBookToEvent(localEditedEvent) {
@@ -55,7 +56,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
-    alert("Your book info has been saved to " + localEditedEvent.name);
+    swal('Congrats!', "Your book info has been saved to " + localEditedEvent.name + "!", 'success');
   }
 
   saveCurrentEventToEvent(localEditedEvent) {
@@ -66,7 +67,7 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
-    alert("This news event has been saved to " + localEditedEvent.name + "!");
+    swal('Congrats!', "This news event has been saved to " + localEditedEvent.name + "!", 'success');
   }
 
   saveCityToEvent(localEditedEvent) {
@@ -77,6 +78,6 @@ export class EventService {
       attendees: localEditedEvent.attendees,
       conversations: localEditedEvent.conversations
     });
-    alert("Your city notes have been saved to " + localEditedEvent.name + "!");
+    swal('Congrats!', "Your city notes have been saved to " + localEditedEvent.name + "!", 'success');
   }
 }

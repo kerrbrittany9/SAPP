@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { CityConversation } from './city-conversation.model';
 import { CitiesService } from './cities.service';
+import swal  from 'sweetalert2';
 
 @Injectable()
 export class CitiesApiService {
@@ -31,7 +32,7 @@ export class CitiesApiService {
       var id = city + ": " + comments;
       var newCityConvo = new CityConversation(comments, city, id);
       this.citiesService.addCityConvo(newCityConvo);
-      alert("This city comment has been saved!");
+      swal('Congrats!', "This city comment has been saved!", 'success');
     })
   }
 
