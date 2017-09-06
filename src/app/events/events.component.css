@@ -12,11 +12,9 @@
 }
 
 #newEventButton {
-  margin-bottom: 20px;
   background-color: white;
   border: solid 1px grey;
-  /*display: block;*/
-  margin: auto;
+  margin-top: 20px;
 }
 .container {
   margin-top: 5%;
